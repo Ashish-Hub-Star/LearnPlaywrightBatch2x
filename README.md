@@ -51,7 +51,7 @@ graph TB
             ch8["Ch 8: Switch ✅"]
             ch9["Ch 9: User Input ✅"]
             ch10["Ch 10: Loops ✅"]
-            ch11["Ch 11: Arrays"]
+            ch11["Ch 11: Arrays ✅"]
             ch12_fn["Ch 12: Functions & Strings"]
         end
 
@@ -206,12 +206,23 @@ LearnPlaywrightBatch2x/
 │   ├── 81_IQ.js                        # for with `continue`
 │   └── 82_IQ.js                        # do-while infinite-loop trap
 │
+├── chapter_11_Arrays/                  ✅ Arrays — creation, access, add/remove, search, iterate, transform
+│   ├── 83_Arrays.js                    # Arrays basics — literal, index, length, mixed types
+│   ├── 84_Arrays.js                    # Array constructor, Array.of(), Array.from()
+│   ├── 85_Access_Array.js              # Accessing & modifying elements, .at() with negative index
+│   ├── 86_Arrays_Adding_Remove.js      # push, pop, unshift, shift
+│   ├── 87_Adding_Remove2.js            # splice — add, remove, replace at any position
+│   ├── 88_REAL_Example.js              # Real-world browser list manipulation
+│   ├── 89_Searching.js                 # indexOf, lastIndexOf, includes, find, findIndex, findLast
+│   ├── 90_Iterate.js                   # for, for...of, forEach, for...in, .entries()
+│   └── 91_Transform_Array.js           # map, filter, reduce, flat
+│
 └── README.md                           👋 You are here
 ```
 
 > Each chapter has its **own README.md** with full code walk-throughs and expected output. Jump straight in:
 >
-> [Ch 1](./chapter_01_Basics/README.md) · [Ch 2](./chapter_02_Javascript_Concepts/README.md) · [Ch 3](./chapter_03_Identifier_Literals/README.md) · [Ch 4](./chapter_04_Javascript_Concepts/README.md) · [Ch 5](./chapter_05_Literal/README.md) · [Ch 6](./chapter_06_Operator/README.md) · [Ch 7](./chapter_07_If_else/README.md) · [Ch 8](./chapter_08_Switch_Statement/README.md) · [Ch 9](./chapter_09_UserInput/README.md) · [Ch 10](./chapter_10_Loops/README.md)
+> [Ch 1](./chapter_01_Basics/README.md) · [Ch 2](./chapter_02_Javascript_Concepts/README.md) · [Ch 3](./chapter_03_Identifier_Literals/README.md) · [Ch 4](./chapter_04_Javascript_Concepts/README.md) · [Ch 5](./chapter_05_Literal/README.md) · [Ch 6](./chapter_06_Operator/README.md) · [Ch 7](./chapter_07_If_else/README.md) · [Ch 8](./chapter_08_Switch_Statement/README.md) · [Ch 9](./chapter_09_UserInput/README.md) · [Ch 10](./chapter_10_Loops/README.md) · [Ch 11](./chapter_11_Arrays/README.md)
 
 > **Legend:** ✅ Done · 🚧 Coming soon
 
@@ -1710,6 +1721,298 @@ do {
 
 ---
 
+## 📖 What's in Chapter 11 — Arrays (Available Now)
+
+> 🔗 **Full walk-through:** [chapter_11_Arrays/README.md](./chapter_11_Arrays/README.md)
+
+### Files
+
+| File | Topic | What you'll learn |
+|------|-------|-------------------|
+| `83_Arrays.js` | Arrays basics | Literal `[]`, index access, `length`, mixed types, `undefined` out-of-bounds |
+| `84_Arrays.js` | Array creation | Array literal, `new Array()`, `Array.of()`, `Array.from()` |
+| `85_Access_Array.js` | Access & modify | Bracket notation `[]`, `.at()` with negative index, modifying in place |
+| `86_Arrays_Adding_Remove.js` | Add/remove | `push`, `pop`, `unshift`, `shift` |
+| `87_Adding_Remove2.js` | Splice | `splice(start, deleteCount, ...items)` — add, remove, replace at any position |
+| `88_REAL_Example.js` | Real-world | Browser list manipulation — iterate, search, remove |
+| `89_Searching.js` | Searching | `indexOf`, `lastIndexOf`, `includes`, `find`, `findIndex`, `findLast`, `findLastIndex` |
+| `90_Iterate.js` | Iteration | `for`, `for...of`, `forEach`, `for...in`, `.entries()` |
+| `91_Transform_Array.js` | Transform | `map`, `filter`, `reduce`, `flat` |
+
+### Key Concepts
+
+```mermaid
+mindmap
+  root((Chapter 11 — Arrays))
+    Creation
+      literal []
+      new Array()
+      Array.of()
+      Array.from()
+    Access
+      bracket [0]
+      .at(-1)
+      modify
+    Add/Remove
+      push (end)
+      pop (end)
+      unshift (start)
+      shift (start)
+      splice (any)
+    Search
+      indexOf
+      lastIndexOf
+      includes
+      find
+      findIndex
+    Iterate
+      for loop
+      for...of
+      forEach
+      for...in
+      .entries()
+    Transform
+      map
+      filter
+      reduce
+      flat
+```
+
+### Run them
+
+```bash
+node chapter_11_Arrays/83_Arrays.js               # → array basics, index, mixed types
+node chapter_11_Arrays/84_Arrays.js               # → Array constructor, Array.of, Array.from
+node chapter_11_Arrays/85_Access_Array.js         # → access, .at(-1), modify
+node chapter_11_Arrays/86_Arrays_Adding_Remove.js # → push, pop, unshift, shift
+node chapter_11_Arrays/87_Adding_Remove2.js       # → splice add/remove/replace
+node chapter_11_Arrays/88_REAL_Example.js         # → real browser list example
+node chapter_11_Arrays/89_Searching.js            # → indexOf, includes, find, findIndex
+node chapter_11_Arrays/90_Iterate.js              # → 5 ways to iterate arrays
+node chapter_11_Arrays/91_Transform_Array.js      # → map, filter, reduce, flat
+```
+
+### 83 — Arrays Basics
+
+**Concept:** Arrays are ordered collections of values. Use literal syntax `[]` (preferred). Index starts at `0`. `length` gives count. Out-of-bounds access returns `undefined`. Arrays can hold mixed types.
+
+**Why:** Test data comes in lists — test names, element handles, results, URLs. Arrays are the first data structure every SDET needs.
+
+```js
+// 83_Arrays.js
+let fruits = [];                         // empty array
+let fruits_fresh = ["apple", "banana", "cherry"];  // length = 3, index 0-2
+
+let arr = [10, 20, 30, 40];
+console.log(arr[0]);   // 10
+console.log(arr[3]);   // 40
+console.log(arr[4]);   // undefined (out of bounds)
+
+let testResults = ["pass", "fail", "pass", "skip"];
+let mixed = [1, "hello", true, null];    // JS arrays can hold any type
+```
+
+### 84 — Array Creation Methods
+
+**Concept:** Beyond the literal `[]`, you can create arrays with `new Array(n)` (pre-allocates `n` empty slots), `Array.of(...items)` (safe constructor), and `Array.from(iterable)` (converts strings/iterables to arrays).
+
+**Why:** `Array.from("hello")` → `["h","e","l","l","o"]` is perfect for splitting strings. `new Array()` with a single number argument creates sparse arrays — a common trap. Use `Array.of()` when you want predictable behavior.
+
+```js
+// 84_Arrays.js
+let browsers = ["Chrome", "Firefox", "Safari"];        // literal (preferred)
+let scores = new Array(3);                             // [empty × 3]
+let scores2 = new Array(1, 2, 3);                      // [1, 2, 3]
+let numbers = new Array(100, 200, 300, 400);           // [100, 200, 300, 400]
+let test = Array.of(10, 20, 30, 40, 50);               // [10, 20, 30, 40, 50]
+let chars = Array.from("hello");                       // ["h", "e", "l", "l", "o"]
+```
+
+| Method | Use when | Trap |
+|:--|:--|:--|
+| `[]` | **Always** (default) | None |
+| `new Array(n)` | Pre-allocate known size | `new Array(3)` = sparse, not `[3]` |
+| `Array.of(...)` | Safe constructor | No trap — always works as expected |
+| `Array.from(iterable)` | Convert string/iterable | Only works on iterable objects |
+
+### 85 — Access & Modify (with `.at()`)
+
+**Concept:** Use bracket notation `[index]` for access and assignment. `.at(index)` is the modern alternative that supports **negative indices** (`.at(-1)` = last element).
+
+**Why:** Negative indexing saves `arr[arr.length - 1]` boilerplate. In test code, `.at(-1)` cleanly grabs the last result, last error, last screenshot — without calculating length.
+
+```js
+// 85_Access_Array.js
+let statuses = ["pass", "fail", "skip"];
+console.log(statuses[0]);       // "pass"
+console.log(statuses.at(-1));   // "skip" (last element)
+console.log(statuses.at(-2));   // "fail"
+
+statuses[1] = "blocked";        // modify in place
+console.log(statuses);          // ["pass", "blocked", "skip"]
+```
+
+### 86 — Add & Remove (Queue/Stack Operations)
+
+**Concept:** Four methods that work on the ends of arrays:
+- `push(x)` — add to **end** (stack push)
+- `pop()` — remove from **end** (stack pop)
+- `unshift(x)` — add to **start** (queue enqueue)
+- `shift()` — remove from **start** (queue dequeue)
+
+**Why:** Test queues (next test to run), result stacks (latest result first), retry lists — these four operations cover 90% of array mutations in automation.
+
+```js
+// 86_Arrays_Adding_Remove.js
+let arr = [1, 2, 3];
+arr.push(4);        // [1, 2, 3, 4]
+arr.pop();          // [1, 2, 3]
+arr.push(5, 6);     // [1, 2, 3, 5, 6]
+arr.unshift(0);     // [0, 1, 2, 3, 5, 6]
+arr.shift();        // [1, 2, 3, 5, 6]
+```
+
+### 87 — Splice (Add, Remove, Replace at Any Position)
+
+**Concept:** `arr.splice(start, deleteCount, ...itemsToAdd)` — the Swiss Army knife. Insert at `start` (deleteCount=0), remove at `start` (deleteCount=N), or replace (deleteCount=M + itemsToAdd).
+
+**Why:** When you need to surgically modify test data — remove a flaky test from a suite, inject a fixture at a specific position, replace expected values mid-run.
+
+```js
+// 87_Adding_Remove2.js
+let arr = [1, 2, 3, 4, 5, 6];
+arr.splice(1, 2, 10, 20);   // delete 2 items at index 1, insert 10, 20
+console.log(arr);           // [1, 10, 20, 4, 5, 6]
+```
+
+| Splice call | Effect | Result |
+|:--|:--|:--|
+| `splice(2, 0, 99)` | Insert `99` at index 2 | `[1, 2, 99, 3, 4, 5, 6]` |
+| `splice(2, 1)` | Remove 1 item at index 2 | `[1, 2, 4, 5, 6]` |
+| `splice(2, 1, 99)` | Replace item at index 2 | `[1, 2, 99, 4, 5, 6]` |
+
+### 89 — Searching Arrays
+
+**Concept:** Six search methods — `indexOf`/`lastIndexOf` (exact match, return index or `-1`), `includes` (boolean), `find`/`findIndex` (first match by predicate), `findLast`/`findLastIndex` (search from end).
+
+**Why:** Finding a specific test result, locating an element in a list, checking if a browser is supported — searching is the most common array operation in test code.
+
+```js
+// 89_Searching.js
+let results = ["pass", "fail", "pass", "error", "fail"];
+results.indexOf("fail");            // 1 (first occurrence)
+results.lastIndexOf("fail");        // 4 (search from end)
+results.includes("error");          // true
+results.includes("skip");           // false
+
+let nums = [10, 25, 30, 45];
+nums.find(n => n > 20);             // 25 (first matching value)
+nums.findIndex(n => n > 20);        // 1 (index of first match)
+nums.findLast(n => n > 20);         // 45 (last matching value)
+nums.findLastIndex(n => n > 20);    // 3 (index of last match)
+```
+
+### 90 — Five Ways to Iterate
+
+**Concept:** JavaScript offers five iteration patterns — classic `for` (full control), `for...of` (cleanest for values), `forEach` (callback style, has index), `for...in` (iterates indices as strings), `.entries()` (index + value pairs with destructuring).
+
+**Why:** Different patterns for different jobs: `for...of` for simple reads, `forEach` for side effects with index, `for` when you need to `break`/`continue`, `.entries()` when you need both index and value cleanly.
+
+```js
+// 90_Iterate.js
+let tests = ["login", "checkout", "search"];
+
+// 1) Classic for — full control, can break/continue
+for (let i = 0; i < tests.length; i++) {
+    console.log(tests[i]);
+}
+
+// 2) for...of — cleanest for values only
+for (let test of tests) {
+    console.log(test);
+}
+
+// 3) forEach — callback, has index, cannot break
+tests.forEach((item, index) => {
+    console.log(item, index);
+});
+
+// 4) for...in — iterates indices (as strings!)
+for (let i in tests) {
+    console.log(i, tests[i]);
+}
+
+// 5) .entries() — index + value pairs (preferred for indexed iteration)
+for (let [i, test] of tests.entries()) {
+    console.log(i, test);
+}
+```
+
+| Method | Break/Continue | Index | Best for |
+|:--|:--:|:--:|:--|
+| `for` loop | ✅ | ✅ | When you need to exit early |
+| `for...of` | ✅ | ❌ | Simple value iteration |
+| `forEach` | ❌ | ✅ | Functional style, side effects |
+| `for...in` | ✅ | ✅ (as strings) | Objects, not recommended for arrays |
+| `.entries()` | ✅ | ✅ | When you need both index and value |
+
+### 91 — Transform (map, filter, reduce, flat)
+
+**Concept:** Higher-order array methods that return **new arrays** (no mutation):
+- `map(fn)` — transform each element (same length output)
+- `filter(fn)` — keep elements that pass a test (shorter or same length)
+- `reduce(fn, initial)` — accumulate to a single value
+- `flat()` — flatten nested arrays by one level (or `flat(depth)` for more)
+
+**Why:** These are the workhorses of test data processing — transforming raw API responses into clean test data, filtering for specific conditions, aggregating results into summaries.
+
+```js
+// 91_Transform_Array.js
+let scores = [45, 82, 91, 60, 73];
+
+// map — transform every element
+let grades = scores.map(s => s > 70 ? "Pass" : "Fail");
+console.log(grades);   // ["Fail", "Pass", "Pass", "Fail", "Pass"]
+
+// filter — keep passing elements
+let passing = scores.filter(s => s > 70);
+console.log(passing);  // [82, 91, 73]
+
+// reduce — accumulate to single value
+let total = scores.reduce((a, b) => a + b, 0);
+console.log(total);    // 351
+
+// flat — flatten nested arrays
+let nested = [[1, 2], [3, 4], [5]];
+console.log(nested.flat());  // [1, 2, 3, 4, 5]
+```
+
+| Method | Returns | Length | Mutation |
+|:--|:--|:--|:--|
+| `map(fn)` | New array | Same as original | ❌ |
+| `filter(fn)` | New array | ≤ original | ❌ |
+| `reduce(fn, init)` | Single value | N/A | ❌ |
+| `flat(depth)` | New array | Depends | ❌ |
+
+**Chaining example** — the pattern you'll use most in test code:
+
+```js
+let results = [
+    { name: "Login", status: "pass", time: 1.2 },
+    { name: "Checkout", status: "fail", time: 3.4 },
+    { name: "Search", status: "pass", time: 0.8 },
+];
+
+let passed = results
+    .filter(r => r.status === "pass")    // keep only passing
+    .map(r => r.name)                     // extract names
+    .sort();                              // sort alphabetically
+
+console.log(passed);  // ["Login", "Search"]
+```
+
+---
+
 ## 🔭 What's Coming Next
 
 ```mermaid
@@ -1731,6 +2034,7 @@ graph TD
 - ✅ Chapter 8 — **Switch Statement**: switch basics, fall-through, default, grouped cases, IQ traps (files `59`–`67`)
 - ✅ Chapter 9 — **User Input**: browser `prompt()`, Node `readline`, `prompt-sync` (files `68`–`70`)
 - ✅ Chapter 10 — **Loops**: for, while, do-while, continue, IQ traps (files `71`–`82`)
+- ✅ Chapter 11 — **Arrays**: creation, access, add/remove, splice, search, iterate, transform (files `83`–`91`)
 - ✅ **Per-chapter README** — every chapter folder now has its own deep-dive README.md
 
 ---
