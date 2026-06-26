@@ -53,6 +53,12 @@ graph TB
             ch10["Ch 10: Loops ✅"]
             ch11["Ch 11: Arrays ✅"]
             ch12_fn["Ch 12: Functions ✅"]
+            ch13_str["Ch 13: Strings ✅"]
+            ch14_obj["Ch 14: Objects ✅"]
+            ch15_2d["Ch 15: 2D Arrays ✅"]
+            ch16_cb["Ch 16: Callbacks ✅"]
+            ch17_pr["Ch 17: Promises ✅"]
+            ch18_aa["Ch 18: Async / Await ✅"]
         end
 
         subgraph adv["⚙️ Advanced JS (Weeks 7–8)"]
@@ -74,6 +80,7 @@ graph TB
         end
 
         subgraph pw["🎭 Playwright (Weeks 10–12)"]
+            pw0["Ch 19: PW Basics ✅"]
             pw1["Ch 24: PW Fundamentals"]
             cli["Lecture: Playwright CLI"]
             ai["Lecture: AI Agents"]
@@ -244,6 +251,141 @@ LearnPlaywrightBatch2x/
 │   ├── 115_API_REAL_Closure.js         # Real-world closure — retry tracker per test
 │   ├── 116_Higher_Order_Fn.js          # Higher-Order Function — takes/returns a function
 │   └── 117_Pure_Fn.js                  # Pure functions — same input → same output, no side effects
+│
+├── chapter_13_Strings/                 ✅ Strings — quotes, template literals, properties, search, slice, transform, conversion
+│   ├── 118_Strings.js                  # Single/double quotes, template literals, multiline, String()
+│   ├── 119_String_Properties.js        # length, index access, .at() negative, charAt, charCodeAt
+│   ├── 120_Search_Check_Str.js         # includes, startsWith/endsWith, indexOf/lastIndexOf, search(regex)
+│   ├── 121_Substring.js                # slice vs substring — negative index, the swap trap
+│   ├── 122_Transform_Str.js            # case, trim, replace/replaceAll, concat, split/join
+│   ├── 123_SC.js                       # String conversion — toString, Number, parseInt, parseFloat
+│   └── javascript_stringcheatsheet.md  # 📋 Full string-method cheat sheet (40+ methods, tables)
+│
+├── chapter_14_Objects/                 ✅ Objects — literals, access, ref vs primitive, destructuring, spread, get/set, this
+│   ├── 124_Objects.js                  # Object literal, keys/values, JSON vs JS object
+│   ├── 125_Objects2.js                 # key:value pairs, copy by reference, === on objects
+│   ├── 126_Objects_Creation.js         # Two identical literals are NOT === (different references)
+│   ├── 127_Objects_REAL.js             # Build config object dynamically, dot access, delete
+│   ├── 128_Primitive_Ref.js            # 🔥 Primitive (copy by value) vs Reference (copy by ref)
+│   ├── 129_Ob_Examples.js              # JSON-style "quoted keys" vs JS unquoted keys
+│   ├── 130_IQ.js                       # Dynamic property access obj[key], getOwnPropertyDescriptor
+│   ├── 131_Object_Fn.js                # Methods on objects — add(n), subtract(n)
+│   ├── 132_Obj_Decon.js                # Destructuring — rename, defaults, nested
+│   ├── 133_Spead.js                    # Spread {...obj} copy, const blocks reassignment
+│   ├── 134_Objects_GET_SET_Methods.js  # get/set accessors + `this`
+│   ├── 135_IQ                          # Object.keys/values/entries + for...in
+│   ├── 136_Obj_REAL.js                 # Real test config — ENV, expected response, nested objects
+│   └── 137_Let_const_obj.js            # let vs const for objects — mutate yes, reassign no
+│
+├── chapter_15_2D_Array/                ✅ 2D Arrays — grids, nested loops, real test matrices, patterns
+│   ├── 138_2D_Array.js                 # Grid literal, nested for loop, grid[i][j] access
+│   ├── 139_2d.js                       # Rows × cols, grid.length vs grid[0].length
+│   ├── 140_REAL.js                     # Test matrix — for, for-of, forEach printing (write vs log)
+│   ├── 141_2d_Array_Fn.js              # map + reduce row sums, find failed test cases
+│   ├── 142_IQ_Right_Pattern_Py.js      # IQ — right-triangle star pattern with nested loops
+│   └── testdata.csv                    # Sample CSV — username, password, expected_Result
+│
+├── chapter_16_Callback/                ✅ Callbacks — pass-a-function, sync vs async, callback hell
+│   ├── 143_Callback.js                 # Callback basics — named, anonymous, arrow forms
+│   ├── 144_CB.js                       # test('title', () => {}) — the callback you already use
+│   ├── 145_CB_Fn.js                    # cafe(item, callWhenReady) — three ways to pass a callback
+│   ├── 146_PW_CB.js                    # Mini Playwright test() — testName + callback pattern
+│   ├── 147_JS_CB.js                    # setTimeout — why Test 3 prints before Test 2
+│   ├── 148_Sync_CB.js                  # Synchronous callback — forEach runs in order, now
+│   ├── 149_Async_CB.js                 # Asynchronous callback — setTimeout defers to later
+│   ├── 150_CB_Hell.js                  # Callback hell — 4-step login nested pyramid
+│   ├── 151_CB_Hell_20_Steps.js         # Pyramid of Doom — 24-step E2E checkout, drifting right
+│   ├── 152_CB_Parameter.js             # Callback with parameters — callback(name, status)
+│   └── 153_CB_Return.js                # Callback as return driver — calculate(a,b,operation)
+│
+├── chapter_17_Promise/                 ✅ Promises — resolve/reject, then/catch/finally, chaining, all/allSettled
+│   ├── 154_Promise.js                  # new Promise(resolve, reject) — the executor, pending state
+│   ├── 155_Promise_REAL_API.js         # .then() runs only on resolve — read response.status
+│   ├── 156_Promise_REAL_API_PART2.js   # .catch() runs only on reject — .then() skipped
+│   ├── 157_Finally.js                  # .finally() always runs — cleanup regardless of outcome
+│   ├── 158_Call_Py_Problem.js          # Promise chaining — flatten callback hell into .then() steps
+│   ├── 159_Promise_ALL.js              # Promise.allSettled — every result, no stop-at-first-fail
+│   └── 160_Promise_IQ.js               # IQ — chaining, throw-in-then, all vs allSettled traps
+│
+├── chapter_18_Async_Await/             ✅ Async / Await — await a promise, try/catch/finally, seq vs parallel
+│   ├── 161_Async.js                    # async + try/catch/finally — await a rejected promise
+│   ├── 162_Aysnc_P2.js                 # await unwraps a promise — the page.goto() pattern
+│   ├── 163_PyODom.js                   # E2E login as flat awaits instead of a .then() chain
+│   ├── 164_Async_Ex.js                 # Playwright test — async ({ page }) + await expect()
+│   ├── 165_AA_Seq.js                   # Sequential awaits — step 2 depends on step 1 (~slow)
+│   ├── 165_AA_Parallel.js              # Parallel — await Promise.allSettled([...]) (~fast)
+│   ├── 166_IQ.js                       # IQ — await order, async returns a promise
+│   └── 167_ACLogin.js                  # Real PW test — test.step, loginAs, toBeHidden
+│
+├── chapter_19_Playwright_Basics/       ✅ Playwright Basics — first real project, page fixture, codegen
+│   ├── tests/
+│   │   ├── example.spec.ts             # First test — page.goto + toHaveTitle on TTACart
+│   │   └── codegen-tta-cart.spec.ts    # Recorded via codegen — fill login, assert error alert
+│   ├── playwright.config.ts            # defineConfig — testDir, headless:false, html reporter, trace
+│   └── package.json                    # @playwright/test dependency
+│
+├── chapter_20_Export_Import/           ✅ Export / Import (ES modules)
+│   ├── utils.js                        # named exports — BASE_URL, formatTestName
+│   ├── testutils.js                    # named exports — BASE_URL, formatUpperCaseString
+│   ├── logger.js                       # default export (log) + named export (log2)
+│   └── 01_EXPORT_IMPORT/
+│       ├── 168_EXPORT_IMPORT.js        # export keyword intro
+│       ├── 169_Utils.js                # named imports + `as` alias for name clashes
+│       ├── 170_Logger.js               # default import — no braces, any name
+│       └── ExplainDefault.md           # deep-dive: default vs non-default exports
+│
+├── chapter_21_Classes_and_Objects/     ✅ OOP — class blueprint, new, constructor
+│   ├── 171_Class_Object.js             # class shape — attributes + behaviour
+│   ├── 172_Class_Object2.js            # constructor fires on `new`, object reference
+│   ├── 173_Car.js                      # parameterised constructor + `this`
+│   ├── 174_REAL_Browser.js             # TestCase class — method vs function
+│   ├── 175_IQ.js                        # param constructor, per-object state
+│   ├── 176_Private_Public.js           # `#private` fields vs public
+│   └── 177_Statis.js / 178_Statis.js   # static fields & methods (class-level)
+│
+├── chapter_22_Encapsulation/           ✅ OOP — hide state behind getter/setter gates
+│   ├── 179_Ecap.js                     # #balance hidden, deposit/getBalance gate it
+│   ├── 180_REAK_EXAMPLE.js             # getter/setter for #private fields
+│   ├── 181_Ecap_Car.js                 # get/setEngine controlled access
+│   └── 182_ECap_Bank.js                # setter guard — only cashier can mutate
+│
+├── chapter_23_Inheritance/             ✅ OOP — extends, super(), override, POM
+│   ├── 183_Single_Inheritance.js       # extends — child reuses parent methods
+│   ├── 184_SI_Example.js               # super(name) calls parent constructor
+│   ├── 185_Single_Inheritance_Con.js   # override — child setup wins
+│   ├── 186_IQ.js                       # super.method() calls parent's version
+│   ├── 187_IQ2.js                      # one loop, many subclasses (polymorphism)
+│   ├── 188_REAL_PageObject_Model.js    # BasePage -> Login/Dashboard/Cart
+│   ├── 189_Multiple_Inheritance.js     # JS forbids extends A, B
+│   ├── 190_Multiple_Level_Inheritance.js  # Base -> Auth -> Admin
+│   └── 191_Hierarchial_Inheritance.js  # one parent, many children
+│
+├── chapter_24_Polymorphism/            ✅ OOP — method overriding, many forms
+│   └── 192_Method_Overriding.js        # same setup(), subclass redefines it
+│
+├── chapter_25_OOP_Interview_Questions/ ✅ OOP drills — fields, defaults, this, chaining
+│   ├── EX1.js                          # Bug class — fields + display()
+│   ├── EX2.js                          # constructor default values
+│   ├── EX3.js                          # `this` per object
+│   └── EX4.js                          # method chaining — return this
+│
+├── chapter_26_Typescript/              ✅ TypeScript — type annotations, primitives, void/never
+│   ├── 193_TS.js                       # plain JS — no types (the "before")
+│   ├── 194_TS_HelloWorld.ts            # first .ts — `let x: string`, typed params + return
+│   ├── 195_TS_Part1.ts                 # `: void` function
+│   ├── 196_TS_Part2.ts                 # primitives, arrays, any vs unknown
+│   ├── 197_TS_Part2.ts                 # unknown narrowing, arrow + object annotations
+│   ├── 198_Part3.ts                    # void vs never (throw / infinite loop)
+│   ├── 199_IQ.ts                       # typed helpers — string/number/boolean/void
+│   └── 200_IQ.ts                       # typed array filter — number[] in/out
+│
+├── chapter_27_TypeScript_Interface/    ✅ TypeScript — interfaces, optional, readonly
+│   ├── 201_IF.ts                       # interface shape — object must match
+│   ├── 202_IF_Part2.ts                 # optional `?` properties
+│   ├── 203_IF_READONLY.ts              # readonly + optional combined
+│   └── 204_IF_READOnly.ts              # readonly fields + readonly arrays
+│
+├── tsconfig.json                       ⚙️  TS compiler config (strict, nodenext, esnext)
 │
 └── README.md                           👋 You are here
 ```
@@ -2929,14 +3071,1570 @@ isPassing(70);              // false ← same input, different answer
 
 ---
 
+## 📖 What's in Chapter 13 — Strings (Available Now)
+
+### Files
+
+| File | Topic | What you'll learn |
+|------|-------|-------------------|
+| `118_Strings.js` | Creating strings | Single vs double quotes, template literals `` `${x}` ``, multiline backticks, `String()` conversion |
+| `119_String_Properties.js` | Properties & indexing | `length`, `str[i]`, `.at(-1)` for last char, `charAt`, `charCodeAt` |
+| `120_Search_Check_Str.js` | Search & check | `includes`, `startsWith`/`endsWith`, `indexOf`/`lastIndexOf`, `search(/regex/)` |
+| `121_Substring.js` | Extract | `slice` (negative index OK) vs `substring` (no negatives, swaps args) |
+| `122_Transform_Str.js` | Transform | `toUpperCase`/`toLowerCase`, `trim`, `replace`/`replaceAll`, `concat`, `split`/`join` |
+| `123_SC.js` | String conversion | `toString`, `Number()`, `parseInt("42px")`, `parseFloat("3.14rem")` |
+| `javascript_stringcheatsheet.md` | 📋 Cheat sheet | All 40+ string methods grouped in tables with one-liner examples + gotchas |
+
+### Concept
+
+A **string** is an ordered, **immutable** sequence of characters — every "modifying" method returns a *new* string and leaves the original untouched. Strings are the bread-and-butter of test automation: URLs, locators, assertion text, API payloads.
+
+### Why
+
+Tests live and die on string handling — extracting a test ID from `"Login_Test_Pass_001"`, asserting a URL `includes("/login")`, normalizing case before comparison, splitting CSV results. Knowing the right method (and its trap) keeps assertions correct and flake-free.
+
+**Q&A — why use this?**
+- **Q: `slice` or `substring`?** A: `slice` — it supports negative indexes (`-3` = last 3 chars) and never silently swaps arguments. `substring` swaps when `start > end`, which hides bugs.
+- **Q: `search` or `indexOf`?** A: `indexOf` for a literal substring (faster, exact). `search` when you need a **regex** or case-insensitive `/x/i` matching.
+- **Q: Why does my replace only change the first match?** A: `replace("a","b")` replaces only the first. Use `replaceAll` or a global regex `/a/g` for every occurrence.
+
+### Key Concepts
+
+```mermaid
+mindmap
+  root((Chapter 13 — Strings))
+    Create
+      single 'quotes'
+      double "quotes"
+      template `${x}`
+      multiline backticks
+    Properties
+      length
+      index str&#91;0&#93;
+      at&#40;-1&#41; last char
+      charAt / charCodeAt
+    Search
+      includes
+      startsWith / endsWith
+      indexOf / lastIndexOf
+      search regex
+    Extract
+      slice negatives OK
+      substring swaps args
+      split into array
+    Transform
+      toUpperCase / toLowerCase
+      trim / trimStart / trimEnd
+      replace vs replaceAll
+      concat / join
+    Convert
+      toString
+      Number&#40;&#41;
+      parseInt / parseFloat
+    Immutable
+      methods return new string
+      original never changes
+```
+
+### Run them
+
+```bash
+node chapter_13_Strings/118_Strings.js              # → template literal + String() output
+node chapter_13_Strings/119_String_Properties.js    # → length 13, index/at/charAt/charCodeAt
+node chapter_13_Strings/120_Search_Check_Str.js      # → includes/indexOf/search results
+node chapter_13_Strings/121_Substring.js             # → "Login", "001" (negative slice), substring
+node chapter_13_Strings/122_Transform_Str.js         # → case, trim, replace, split/join
+node chapter_13_Strings/123_SC.js                    # → string ↔ number conversions
+```
+
+---
+
+### 121 — slice vs substring (the trap)
+
+**Concept:** Both `slice(start, end)` and `substring(start, end)` extract a portion of a string, but they behave differently with negative and out-of-order arguments.
+
+**Why:** Picking the wrong one introduces silent bugs — `substring` rewrites your arguments behind your back, so a "wrong" range still returns *something* instead of failing loudly.
+
+**Q&A — why use this?**
+- **Q: How do I grab the last N characters?** A: `str.slice(-3)` — negative indexes count from the end. `substring(-3)` treats `-3` as `0` and returns the whole string.
+- **Q: What if `start > end`?** A: `slice` returns `""` (empty); `substring` **swaps** them and returns a non-empty result — a classic source of confusion.
+- **Q: Which should I default to?** A: `slice`. Same mental model as `Array.prototype.slice`, predictable with negatives, no silent swaps.
+
+```mermaid
+flowchart TD
+    Q{Need substring} --> A[slice start,end]
+    Q --> B[substring start,end]
+    A --> A1["negative index? counts from end"]
+    A --> A2["start gt end? returns empty string"]
+    B --> B1["negative index? treated as 0"]
+    B --> B2["start gt end? swaps args silently"]
+    A1 --> Win[Prefer slice]
+    A2 --> Win
+```
+
+```js
+let str = "Login_Test_Pass_001";
+
+str.slice(0, 5);     // "Login"
+str.slice(11);       // "Pass_001"  — end omitted → to the end
+str.slice(-3);       // "001"       — last 3 chars
+
+str.substring(6, 10);// "Test"
+str.substring(10, 6);// "Test"      — swapped! same as (6,10)
+str.slice(10, 6);    // ""          — slice returns empty
+```
+
+| Behavior | `slice` | `substring` |
+|----------|---------|-------------|
+| Negative index | counts from end | treated as `0` |
+| `start > end` | returns `""` | swaps args silently |
+| Recommended | ✅ default | ⚠️ avoid |
+
+---
+
+## 📖 What's in Chapter 14 — Objects (Available Now)
+
+### Files
+
+| File | Topic | What you'll learn |
+|------|-------|-------------------|
+| `124_Objects.js` | Object literals | `{ key: value }`, dot access, JSON vs JS object shape |
+| `125_Objects2.js` | Keys & reference copy | Unquoted keys, `let b = a` copies the reference, `b === a` is `true` |
+| `126_Objects_Creation.js` | Identity | Two identical literals are **not** `===` — different memory references |
+| `127_Objects_REAL.js` | Build & delete | Add props dynamically (`config.browser = …`), `delete`, guard with dot access |
+| `128_Primitive_Ref.js` | 🔥 Value vs Reference | Primitives copy by **value**, objects/arrays/functions copy by **reference** |
+| `129_Ob_Examples.js` | JSON vs JS | `"quoted"` keys (JSON) vs unquoted keys (JS object literal) |
+| `130_IQ.js` | Dynamic access | `obj[key]` with a variable, `Object.getOwnPropertyDescriptor` flags |
+| `131_Object_Fn.js` | Methods | Functions as object members — `calculator.add(n)` |
+| `132_Obj_Decon.js` | Destructuring | Pull props into variables, rename, default values, nested destructuring |
+| `133_Spead.js` | Spread / copy | `{ ...obj }` shallow copy, merge, `const` blocks reassignment |
+| `134_Objects_GET_SET_Methods.js` | Getters / setters | `get`/`set` accessors and the `this` keyword |
+| `135_IQ` | Iterate | `Object.keys` / `values` / `entries`, `for...in` |
+| `136_Obj_REAL.js` | Real config | Test `ENV`, expected API response, nested config objects |
+| `137_Let_const_obj.js` | `let` vs `const` | Mutate properties freely; `const` blocks only reassignment of the binding |
+
+### Concept
+
+An **object** is an unordered collection of `key: value` pairs — the core data structure for grouping related data (a user, a config, an API response). Unlike primitives, objects are held by **reference**: a variable stores a pointer to the object in memory, not the object itself.
+
+### Why
+
+Everything in test automation is an object — Playwright `config`, fixtures, API request/response bodies, test data. Understanding reference semantics (why `b = a` then `b.x = 1` also changes `a.x`) prevents a whole category of "my test data mutated itself" bugs.
+
+**Q&A — why use this?**
+- **Q: Why does changing `b` also change `a` after `let b = a`?** A: Objects copy by **reference** — `a` and `b` point to the **same** object. Mutating through either name mutates the one shared object. Use `{ ...a }` for an independent copy.
+- **Q: Why are two `{ status: "pass" }` literals not `===`?** A: Each literal creates a **new** object at a new memory address. `===` compares references, not contents — different addresses → `false`. Compare contents with `JSON.stringify` or a deep-equal helper.
+- **Q: Dot `obj.name` or bracket `obj["name"]`?** A: Dot for known, fixed keys. Bracket when the key is **dynamic** (in a variable) or not a valid identifier (`obj["first name"]`).
+
+### Key Concepts
+
+```mermaid
+mindmap
+  root((Chapter 14 — Objects))
+    Create
+      literal {key: value}
+      empty {}
+      JSON quoted keys
+      JS unquoted keys
+    Access
+      dot obj.name
+      bracket obj&#91;key&#93;
+      dynamic key var
+    Mutate
+      add obj.x = 1
+      update obj.x = 2
+      delete obj.x
+    Reference
+      copy by reference
+      b = a shares object
+      === compares references
+      spread {...obj} copies
+    Destructure
+      pull props
+      rename
+      defaults
+      nested
+    Methods
+      fn members
+      get / set
+      this keyword
+    Iterate
+      Object.keys
+      Object.values
+      Object.entries
+      for...in
+    Binding
+      const blocks reassign
+      properties stay mutable
+```
+
+### Run them
+
+```bash
+node chapter_14_Objects/124_Objects.js                  # → object literals + JSON shape
+node chapter_14_Objects/125_Objects2.js                 # → reference copy, b === a → true
+node chapter_14_Objects/128_Primitive_Ref.js            # → value vs reference semantics
+node chapter_14_Objects/132_Obj_Decon.js                # → destructuring, rename, defaults, nested
+node chapter_14_Objects/133_Spead.js                    # → spread copy + const reassignment block
+node chapter_14_Objects/134_Objects_GET_SET_Methods.js  # → getter/setter + this
+node chapter_14_Objects/137_Let_const_obj.js            # → mutate ok, reassign blocked by const
+```
+
+---
+
+### 124 — Object Basics (literals, access, JSON vs JS)
+
+**Concept:** An object literal `{ key: value }` groups related data. Read it with dot (`obj.name`) or bracket (`obj["name"]`) notation. JS keys are unquoted; the quoted-key form (`{ "name": … }`) is JSON.
+
+**Why:** Objects model real entities — a user, a test config, a request payload. They are the most common shape you pass around in Playwright and API tests.
+
+**Q&A — why use this?**
+- **Q: When are keys quoted?** A: Only in JSON, or when a key isn't a valid identifier (`"first name"`, `"data-id"`). Plain JS object keys are unquoted.
+- **Q: How do I add a property after creation?** A: Assign to a new key — `config.browser = "chrome"`. The object grows. `delete config.browser` removes it.
+- **Q: What does `obj.missing` return?** A: `undefined` — not an error. Guard with `if (obj.x)` or `obj.x ?? fallback` before using it.
+
+```mermaid
+flowchart LR
+    O["obj = { name, age }"] --> D["obj.name (dot)"]
+    O --> B["obj&#91;'age'&#93; (bracket)"]
+    O --> A["obj.city = 'NYC' (add)"]
+    O --> X["delete obj.age (remove)"]
+    style O fill:#e3f2fd,stroke:#01579b
+```
+
+```js
+// 124 + 127 + 130 — combined
+let config = {};
+config.browser = "chrome";      // add property
+config.timeout = 3000;
+console.log(config);            // { browser: 'chrome', timeout: 3000 }
+
+delete config.browser;          // remove property
+console.log(config);            // { timeout: 3000 }
+
+const user = { name: "John", age: 30 };
+const key = "age";
+console.log(user.name);         // "John"   — dot
+console.log(user[key]);         // 30       — dynamic bracket access
+```
+
+---
+
+### 128 — Primitive vs Reference (the #1 gotcha)
+
+**Concept:** Primitives (`number`, `string`, `boolean`, …) are copied **by value** — the copy is independent. Objects, arrays, and functions are copied **by reference** — the copy points at the *same* underlying object.
+
+**Why:** This single rule explains the most common "why did my data change?" bug in test code. Pass an object to a helper, mutate it there, and the caller's object changes too — because there was only ever one object.
+
+**Q&A — why use this?**
+- **Q: After `let b = a` (objects), are they linked?** A: Yes — both names point to one object. `b.val = 99` makes `a.val` 99 too. There is no copy.
+- **Q: How do I make a real, independent copy?** A: Shallow: `{ ...a }` or `Object.assign({}, a)`. Deep (nested objects): `structuredClone(a)` or `JSON.parse(JSON.stringify(a))`.
+- **Q: Does this apply to function arguments?** A: Yes. Passing an object to a function passes the reference — mutations inside the function are visible outside. Primitives passed in are safe copies.
+
+```mermaid
+flowchart TB
+    subgraph prim["Primitive — copy by VALUE"]
+        PA["a = 10"] --> PB["b = a → 10"]
+        PB --> PC["b = 99"]
+        PC --> PR["a still 10 ✅"]
+    end
+    subgraph ref["Reference — copy by REFERENCE"]
+        RA["obj1 = { val: 10 }"] --> RB["obj2 = obj1"]
+        RB --> RBOX[("one object<br/>{ val }")]
+        RA --> RBOX
+        RB --> RC["obj2.val = 99"]
+        RC --> RR["obj1.val is 99 ⚠️"]
+    end
+    style PR fill:#e8f5e9,stroke:#2e7d32
+    style RR fill:#ffebee,stroke:#c62828
+```
+
+```js
+// 128_Primitive_Ref.js
+let a = 10;
+let b = a;          // copy the VALUE
+b = 99;
+console.log(a);     // 10  ← a is untouched
+
+let obj1 = { val: 10 };
+let obj2 = obj1;    // copy the REFERENCE (same object)
+obj2.val = 99;
+console.log(obj1.val); // 99 ← both names point to one object
+
+// Independent copy:
+let obj3 = { ...obj1 };
+obj3.val = 1;
+console.log(obj1.val); // 99 ← obj3 is its own object
+```
+
+| | Primitive | Object / Array / Function |
+|:-|:-:|:-:|
+| Copied by | **value** | **reference** |
+| `b = a; b = x` affects `a`? | ❌ no | ⚠️ yes (when mutating, not reassigning) |
+| Independent copy | automatic | `{ ...a }`, `structuredClone(a)` |
+| `===` compares | value | reference (identity) |
+
+---
+
+### 132 — Destructuring (rename, defaults, nested)
+
+**Concept:** Destructuring pulls properties out of an object straight into variables — `const { name, age } = user`. You can rename (`name: userName`), supply defaults (`country = "USA"`), and reach into nested objects.
+
+**Why:** It keeps test code clean — grab exactly the fields you need from a fixture, config, or API response in one line instead of repeating `response.body.user.…` everywhere.
+
+**Q&A — why use this?**
+- **Q: How do I rename while destructuring?** A: `const { name: userName } = user` — `name` is the source key, `userName` is the new variable. The original key name does not become a variable.
+- **Q: What if the property is missing?** A: Provide a default — `const { country = "USA" } = user`. If `user.country` is `undefined`, `country` becomes `"USA"`.
+- **Q: Can I destructure nested objects?** A: Yes — `const { user: { address: { city } } } = data`. Only `city` becomes a variable; the intermediate names are just the path.
+
+```mermaid
+flowchart LR
+    U["user = { name1, age, city }"] --> R1["{ name1: userName } → rename"]
+    U --> R2["{ country = 'USA' } → default"]
+    D["data.user.address.city"] --> R3["{ user: { address: { city } } } → nested"]
+    style U fill:#e3f2fd,stroke:#01579b
+    style D fill:#f3e5f5,stroke:#7b1fa2
+```
+
+```js
+// 132_Obj_Decon.js
+const user = { name1: "John", age: 30, city: "NYC" };
+
+// Rename
+const { name1: userName, age: userAge } = user;
+console.log(userName, userAge);   // John 30
+
+// Default value (key absent → fallback)
+const { country = "USA" } = user;
+console.log(country);             // USA
+
+// Nested
+const data = {
+    user: { name: "John", address: { city: "NYC" } }
+};
+const { user: { address: { city } } } = data;
+console.log(city);                // NYC
+```
+
+---
+
+### 133 / 137 — Spread Copy & `let` vs `const` for Objects
+
+**Concept:** `{ ...obj }` spreads an object's own properties into a new object — a shallow copy or merge. Declaring the binding with `const` locks **which** object the variable points to; it does **not** freeze the contents — properties stay fully mutable.
+
+**Why:** Spread is the idiomatic way to copy/merge config without sharing a reference. `const` for objects is the team default: the reference rarely changes, so `const` signals stable intent and turns accidental reassignment into a loud error.
+
+**Q&A — why use this?**
+- **Q: Does `const` make an object immutable?** A: No. `const obj = {…}` blocks `obj = somethingElse` (reassignment) but allows `obj.x = 1`, `delete obj.y`. Use `Object.freeze(obj)` to lock contents.
+- **Q: When do I actually need `let` for an object?** A: Only when you reassign the **binding** to a different object (`config = { … }`). Rare — mutating or spreading into a new `const` is preferred.
+- **Q: Is `{ ...obj }` a deep copy?** A: No — **shallow**. Nested objects are still shared by reference. Deep copy needs `structuredClone(obj)`.
+
+```mermaid
+flowchart TD
+    C["const obj1 = { a: 1, b: 2 }"] --> M["obj1.a = 99 ✅ mutate contents"]
+    C --> ADD["obj1.c = 3 ✅ add prop"]
+    C --> COPY["const copy = { ...obj1 } ✅ new object"]
+    C --> RE["obj1 = { x: 5 } ❌ TypeError: Assignment to constant"]
+    style M fill:#e8f5e9,stroke:#2e7d32
+    style ADD fill:#e8f5e9,stroke:#2e7d32
+    style COPY fill:#e8f5e9,stroke:#2e7d32
+    style RE fill:#ffebee,stroke:#c62828
+```
+
+```js
+// 133_Spead.js + 137_Let_const_obj.js
+const obj1 = { a: 1, b: 2 };
+const copy = { ...obj1 };        // shallow copy — independent object
+console.log(copy);               // { a: 1, b: 2 }
+
+const config = { browser: "Chrome", timeout: 3000 };
+config.browser = "Firefox";      // ✅ mutate property — allowed
+config.retries = 2;              // ✅ add property — allowed
+console.log(config);             // { browser: 'Firefox', timeout: 3000, retries: 2 }
+// config = { browser: "Safari" };  // ❌ TypeError: Assignment to constant variable
+
+// let needed ONLY when reassigning the binding to a new object:
+let active = { browser: "Chrome" };
+active = { browser: "Safari" };  // points to a different object
+```
+
+| Action on `const obj` | Allowed? |
+|:----------------------|:--------:|
+| `obj.x = 1` (mutate) | ✅ |
+| `obj.y = 2` (add) | ✅ |
+| `delete obj.z` (remove) | ✅ |
+| `obj = { … }` (reassign) | ❌ TypeError |
+| `Object.freeze(obj)` then `obj.x = 1` | ⚠️ ignored (throws in strict mode) |
+
+> 📎 Full interview write-up of this in [`interview.md`](./interview.md#objects).
+
+---
+
+### 134 — Getters, Setters & `this`
+
+**Concept:** A `get` accessor runs like a property read (`user.fullName`, no parentheses) and a `set` accessor runs on assignment (`user.fullName = "…"`). Inside both, `this` refers to the object the accessor lives on.
+
+**Why:** Getters/setters compute derived values (full name from first + last) and validate or split values on write — a stepping stone to classes and Page Object Model properties in Playwright.
+
+**Q&A — why use this?**
+- **Q: Why no `()` when calling a getter?** A: A getter *is* a property — you read it like data (`user.fullName`), and the function runs behind the scenes. That's the point: a computed value that looks like a field.
+- **Q: What does `this` point to?** A: The object the method/accessor is called on. `this.firstName` reads the current object's `firstName`. Arrow functions don't bind their own `this` — avoid them for object methods.
+- **Q: When prefer get/set over a plain method?** A: When it reads naturally as a property (`order.total`, `user.fullName`). Use a method (`calc.add(n)`) when it's clearly an action with arguments.
+
+```mermaid
+flowchart LR
+    R["read user.fullName"] --> G["get fullName() returns this.first + this.last"]
+    W["user.fullName = 'Amit Sharma'"] --> S["set fullName(v) splits v into first + last"]
+    style G fill:#e8f5e9,stroke:#2e7d32
+    style S fill:#fff3e0,stroke:#e65100
+```
+
+```js
+// 134_Objects_GET_SET_Methods.js
+const user = {
+    firstName: "Pramod",
+    lastName: "Dutta",
+    get fullName() {
+        return this.firstName + " " + this.lastName;
+    },
+    set fullName(value) {
+        [this.firstName, this.lastName] = value.split(" ");
+    }
+};
+
+console.log(user.fullName);      // "Pramod Dutta"  — getter, no ()
+user.fullName = "Amit Sharma";   // setter — splits into first/last
+console.log(user.firstName);     // "Amit"
+console.log(user.lastName);      // "Sharma"
+```
+
+---
+
+### 135 — Iterating Objects (`keys` / `values` / `entries`, `for...in`)
+
+**Concept:** Objects aren't directly iterable like arrays. `Object.keys(obj)`, `Object.values(obj)`, and `Object.entries(obj)` turn an object into arrays you can loop; `for...in` walks the keys directly.
+
+**Why:** You constantly need to walk a config, an API response, or test data — log every field, transform values, or assert each entry.
+
+**Q&A — why use this?**
+- **Q: `keys` vs `values` vs `entries`?** A: `keys` → `["a","b"]`; `values` → `[1,2]`; `entries` → `[["a",1],["b",2]]`. Use `entries` when you need both key and value in the loop.
+- **Q: `for...in` or `Object.keys().forEach`?** A: `Object.keys()` is safer — `for...in` also walks inherited enumerable keys. With `Object.keys()` you only get the object's own keys.
+- **Q: How do I loop key+value cleanly?** A: `Object.entries(obj).forEach(([k, v]) => …)` — array destructuring in the callback gives you both at once.
+
+```mermaid
+flowchart LR
+    O["obj = { a: 1, b: 2, c: 3 }"] --> K["Object.keys → &#91;'a','b','c'&#93;"]
+    O --> V["Object.values → &#91;1, 2, 3&#93;"]
+    O --> E["Object.entries → &#91;&#91;'a',1&#93;,&#91;'b',2&#93;,&#91;'c',3&#93;&#93;"]
+    style O fill:#e3f2fd,stroke:#01579b
+```
+
+```js
+// 135_IQ
+const obj = { a: 1, b: 2, c: 3 };
+console.log(Object.keys(obj));     // [ 'a', 'b', 'c' ]
+console.log(Object.values(obj));   // [ 1, 2, 3 ]
+console.log(Object.entries(obj));  // [ ['a',1], ['b',2], ['c',3] ]
+
+const user = { name: "John", age: 30 };
+for (const key in user) {
+    console.log(`${key}: ${user[key]}`);   // name: John / age: 30
+}
+```
+
+---
+
+## 📖 What's in Chapter 15 — 2D Arrays (Available Now)
+
+### Files
+
+| File | Topic | What you'll learn |
+|------|-------|-------------------|
+| `138_2D_Array.js` | Grid basics | Array-of-arrays literal, nested `for`, `grid[i][j]` access |
+| `139_2d.js` | Rows × columns | `1x4` shape, `grid.length` (rows) vs `grid[0].length` (cols) |
+| `140_REAL.js` | Test matrix | Walk a results matrix 3 ways — `for`, `for...of`, `forEach`; `write` vs `log` |
+| `141_2d_Array_Fn.js` | map + reduce | Per-row sums with `map`+`reduce`, find every failed test case |
+| `142_IQ_Right_Pattern_Py.js` | Pattern IQ | Right-triangle star pattern built with nested loops |
+| `testdata.csv` | Data file | Sample CSV (username, password, expected) — rows = records, cols = fields |
+
+### Concept
+
+A **2D array** is an array whose elements are themselves arrays — a **grid** of rows and columns. You reach a cell with two indexes: `grid[row][col]`. It's the natural shape for tables, matrices, and test-result sets.
+
+### Why
+
+Test data is naturally tabular — a results matrix (`[name, status, code]` per test), a CSV of login credentials, a score sheet. 2D arrays + nested loops let you store and walk that grid the same way you'd read a spreadsheet.
+
+**Q&A — why use this?**
+- **Q: How do I get the rows and columns count?** A: `grid.length` = number of rows; `grid[0].length` = columns in the first row. Rows can have **different** lengths (a jagged array), so check each row's own length.
+- **Q: Why two loops?** A: One index per dimension — the outer loop picks a **row**, the inner loop walks the **cells** in that row. `grid[i][j]` needs both `i` and `j`.
+- **Q: `for` vs `for...of` vs `forEach`?** A: Same result. `for` when you need the index (`i`/`j`); `for...of` / `forEach` when you only need the value. `forEach` can't `break` early — use `for...of` if you must stop.
+
+### Key Concepts
+
+```mermaid
+mindmap
+  root((Chapter 15 — 2D Arrays))
+    Shape
+      array of arrays
+      rows x cols
+      grid&#91;i&#93;&#91;j&#93;
+      jagged rows differ
+    Size
+      grid.length rows
+      grid&#91;0&#93;.length cols
+    Iterate
+      nested for i,j
+      for...of row then cell
+      forEach row then cell
+    Print
+      write same line
+      log&#40;&#41; ends row
+    Transform
+      map per row
+      reduce row sum
+      filter failed cases
+    Patterns
+      star triangle
+      nested loop counts
+```
+
+### Run them
+
+```bash
+node chapter_15_2D_Array/138_2D_Array.js              # → prints every cell of a 3x3 grid
+node chapter_15_2D_Array/139_2d.js                    # → grid[0][0], rows vs cols counts
+node chapter_15_2D_Array/140_REAL.js                  # → test matrix printed as a table
+node chapter_15_2D_Array/141_2d_Array_Fn.js           # → row sums [253,175,275] + failed cases
+node chapter_15_2D_Array/142_IQ_Right_Pattern_Py.js   # → right-triangle star pattern
+```
+
+---
+
+### 138 / 139 — Grid Basics & Shape
+
+**Concept:** A 2D array is `[[...], [...], [...]]` — each inner array is a row. `grid[i][j]` reads row `i`, column `j`. `grid.length` counts rows; `grid[0].length` counts columns in row 0.
+
+**Why:** Any tabular data — a 3×3 board, a score sheet, a results table — maps directly onto a grid, and the two-index access mirrors how you'd point at a spreadsheet cell.
+
+**Q&A — why use this?**
+- **Q: What is `grid[1][2]`?** A: Row index 1 (second row), column index 2 (third cell). Both indexes are zero-based.
+- **Q: How big is the grid?** A: `grid.length` rows; for a rectangular grid, `grid[0].length` cols. Total cells = rows × cols.
+- **Q: Are all rows the same length?** A: Not necessarily. A **jagged** array has rows of different lengths — always read each row's own `.length` inside the loop.
+
+```mermaid
+flowchart LR
+    G["grid = &#91;&#91;1,2,3&#93;,&#91;4,5,6&#93;,&#91;7,8,9&#93;&#93;"] --> R0["grid&#91;0&#93; → &#91;1,2,3&#93; (row)"]
+    R0 --> C["grid&#91;0&#93;&#91;2&#93; → 3 (cell)"]
+    G --> L1["grid.length → 3 rows"]
+    G --> L2["grid&#91;0&#93;.length → 3 cols"]
+    style G fill:#e3f2fd,stroke:#01579b
+```
+
+```js
+// 138 + 139 — combined
+let grid = [
+    [10, 20, 30],
+    [40, 50, 60],
+    [70, 80, 90]
+];
+
+console.log(grid[0][0]);       // 10  — row 0, col 0
+console.log(grid[0][2]);       // 30  — row 0, col 2
+console.log(grid.length);      // 3   — number of rows
+console.log(grid[0].length);   // 3   — columns in row 0
+```
+
+---
+
+### 140 — Walking a Test Matrix (`for` / `for...of` / `forEach`)
+
+**Concept:** Three ways to visit every cell of a grid, all using two loops: classic `for` (with `i`/`j`), `for...of` (value-by-value), and `forEach`. Printing a row on one line needs `process.stdout.write` (no newline) plus an empty `console.log()` to end the row.
+
+**Why:** A test-results matrix (`[name, status, code]` per row) is exactly this shape — you loop it to count executed tests, count passes, or pull the failing status codes.
+
+**Q&A — why use this?**
+- **Q: Why `process.stdout.write` instead of `console.log` for cells?** A: `write` prints with **no** newline, so cells stay on the same line. `console.log` always adds `\n`, which would put every cell on its own line.
+- **Q: What does the empty `console.log()` do?** A: Prints just a newline — it **ends the current row** so the next row starts below it.
+- **Q: Which loop should I pick?** A: `for` when you need indexes; `for...of`/`forEach` when you only need values. Need to stop early? `for...of` supports `break`; `forEach` does not.
+
+```mermaid
+flowchart TD
+    Start["testMatrix"] --> Outer["outer loop → pick a ROW"]
+    Outer --> Inner["inner loop → each CELL"]
+    Inner --> W["write(cell + ' ') → same line"]
+    Inner -->|row done| NL["console.log() → newline"]
+    NL --> Outer
+    style W fill:#e8f5e9,stroke:#2e7d32
+    style NL fill:#fff3e0,stroke:#e65100
+```
+
+```js
+// 140_REAL.js
+let testMatrix = [
+    ["login",    "pass", 200],
+    ["checkout", "fail", 404],
+    ["search",   "pass", 180]
+];
+
+testMatrix.forEach(row => {
+    row.forEach(cell => process.stdout.write(cell + " ")); // cells on one line
+    console.log();                                          // end the row
+});
+// login pass 200
+// checkout fail 404
+// search pass 180
+```
+
+---
+
+### 141 — Transforming Grids (`map` + `reduce`, filtering failures)
+
+**Concept:** Array methods compose on grids: `grid.map(row => row.reduce(...))` collapses each row to a single value (e.g. a sum); nested loops with an `if` pull out only the cells you care about.
+
+**Why:** Real analysis on tabular data — total each student's scores, sum each test suite's timings, or list every test case that contains `"fail"` — is just map/reduce/filter applied row by row.
+
+**Q&A — why use this?**
+- **Q: How do I sum each row?** A: `scores.map(row => row.reduce((a, b) => a + b, 0))` — `map` runs once per row, `reduce` adds that row's cells into one number. Result is a 1D array of sums.
+- **Q: Why the `0` in `reduce(..., 0)`?** A: It's the **initial accumulator**. Without it, `reduce` uses the first element as the seed — which breaks on an empty row. Always seed numeric reduces with `0`.
+- **Q: How do I find failing tests?** A: Nested loop, and `if (cell.includes("fail"))` keep it. Works because each cell is a string like `"filter-fail"`.
+
+```mermaid
+flowchart LR
+    S["scores = &#91;&#91;85,90,78&#93;,&#91;60,45,70&#93;,&#91;95,88,92&#93;&#93;"] --> M["map per row"]
+    M --> R["reduce each row → sum"]
+    R --> O["&#91;253, 175, 275&#93;"]
+    style S fill:#e3f2fd,stroke:#01579b
+    style O fill:#e8f5e9,stroke:#2e7d32
+```
+
+```js
+// 141_2d_Array_Fn.js
+let scores = [
+    [85, 90, 78],   // 253
+    [60, 45, 70],   // 175
+    [95, 88, 92]    // 275
+];
+let rowSums = scores.map(row => row.reduce((a, b) => a + b, 0));
+console.log(rowSums);            // [ 253, 175, 275 ]
+
+let suiteResults = [
+    ["login-pass", "register-pass", "logout-pass"],
+    ["search-pass", "filter-fail",  "sort-pass"],
+    ["checkout-fail", "payment-fail", "confirm-pass"]
+];
+for (let i = 0; i < suiteResults.length; i++) {
+    for (let j = 0; j < suiteResults[i].length; j++) {
+        if (suiteResults[i][j].includes("fail")) {
+            console.log(suiteResults[i][j]); // filter-fail / checkout-fail / payment-fail
+        }
+    }
+}
+```
+
+---
+
+### 142 — Pattern IQ: Right-Triangle Stars (nested loops)
+
+**Concept:** A classic interview warm-up — the **outer** loop controls how many rows, the **inner** loop prints that many stars on the current row. Row `i` gets `i` stars.
+
+**Why:** Star patterns are the simplest way to *feel* how nested loops drive a 2D shape — the inner loop count depends on the outer loop's current value, which is the core idea behind every grid algorithm.
+
+**Q&A — why use this?**
+- **Q: Why does row `i` print `i` stars?** A: The inner loop runs `j` from `1` to `i`, so its count grows by one each outer pass — 1 star, then 2, then 3…
+- **Q: Build the row string or print each star?** A: Build a `row` string in the inner loop, then `console.log(row)` once per row — fewer prints, and the whole row lands on one line.
+- **Q: How is this different from a square grid?** A: The inner bound is `i` (variable), not a fixed `n` — that's what makes it a *triangle* instead of a full rectangle.
+
+```mermaid
+flowchart TD
+    O["outer i = 1..n (rows)"] --> I["inner j = 1..i (stars)"]
+    I --> B["row += '*'"]
+    B -->|inner done| P["console.log(row)"]
+    P --> O
+    style B fill:#e8f5e9,stroke:#2e7d32
+```
+
+```js
+// 142_IQ_Right_Pattern_Py.js
+let n = 5;
+for (let i = 1; i <= n; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+        row += "*";
+    }
+    console.log(row);
+}
+// *
+// **
+// ***
+// ****
+// *****
+```
+
+---
+
+## 📖 What's in Chapter 16 — Callbacks (Available Now)
+
+### Files
+
+| File | Topic | What you'll learn |
+|------|-------|-------------------|
+| `143_Callback.js` | Callback basics | Pass a function into another function — named, anonymous, and arrow forms |
+| `144_CB.js` | The callback you already use | `test('title', () => {})` — the second arg *is* a callback |
+| `145_CB_Fn.js` | Three ways to pass | Same `cafe(item, callback)` called with a named fn, an anonymous fn, an arrow fn |
+| `146_PW_CB.js` | Playwright shape | A mini `test(testName, callback)` — exactly how Playwright's `test()` is built |
+| `147_JS_CB.js` | Why order surprises you | `setTimeout` — Test 3 prints **before** Test 2; the event loop defers |
+| `148_Sync_CB.js` | Synchronous callback | `forEach` runs the callback **now**, item-by-item, in order |
+| `149_Async_CB.js` | Asynchronous callback | `setTimeout` runs the callback **later**, after the stack clears |
+| `150_CB_Hell.js` | Callback hell | 4-step login nested inside each other's callbacks — the pyramid begins |
+| `151_CB_Hell_20_Steps.js` | Pyramid of Doom | 24-step E2E checkout — code drifts further right with every nested step |
+| `152_CB_Parameter.js` | Callbacks with args | The caller passes data **into** the callback — `callback(name, status)` |
+| `153_CB_Return.js` | Callback drives the result | `calculate(a, b, operation)` — the callback decides what gets returned |
+
+### Concept
+
+A **callback** is a function you pass as an argument to another function, to be called back later — either immediately (synchronous, like `forEach`) or after some work finishes (asynchronous, like `setTimeout` or a network response).
+
+### Why
+
+Every test framework runs on callbacks — `test('name', async () => {...})` hands your test body to the runner as a callback. Understanding sync vs async callbacks (and how they nest into "callback hell") is the foundation for Promises and `async/await` coming next.
+
+**Q&A — why use this?**
+- **Q: Why does `Test 3` print before `Test 2` in `147_JS_CB.js`?** A: `setTimeout` is asynchronous — its callback is parked until the call stack is empty, so the synchronous `console.log("Test 3")` runs first even with a `0ms` delay.
+- **Q: Sync or async callback — how do I tell?** A: `forEach`/`map` invoke the callback **immediately** and finish before the next line. `setTimeout`/network/file callbacks fire **later**, after the surrounding code completes.
+- **Q: What's "callback hell"?** A: When each async step must wait for the previous one, you nest callbacks inside callbacks — the code marches right into a "pyramid of doom" (`151`). Promises and `async/await` flatten it.
+
+### Key Concepts
+
+```mermaid
+mindmap
+  root((Chapter 16 — Callbacks))
+    What
+      function passed as argument
+      called back later
+      named / anonymous / arrow
+    Where you see it
+      test&#40;name, callback&#41;
+      forEach&#40;callback&#41;
+      setTimeout&#40;callback, ms&#41;
+    Sync
+      runs now
+      forEach in order
+      finishes before next line
+    Async
+      runs later
+      setTimeout defers
+      event loop parks it
+    Callback hell
+      nest step in step
+      pyramid of doom
+      drifts right
+    With parameters
+      callback&#40;name, status&#41;
+      caller passes data in
+    Returns
+      operation&#40;a, b&#41;
+      callback decides result
+    Next
+      Promises
+      async / await
+```
+
+### Run them
+
+```bash
+node chapter_16_Callback/143_Callback.js            # → order placed, then each callback fires
+node chapter_16_Callback/147_JS_CB.js               # → Test 1, Test 3, then Test 2 (2s later)
+node chapter_16_Callback/148_Sync_CB.js             # → Test 0..3 printed in order, synchronously
+node chapter_16_Callback/149_Async_CB.js            # → Test 1, Test 3, then Test 2 deferred
+node chapter_16_Callback/150_CB_Hell.js             # → Steps 1-4 then "Test Complete!"
+node chapter_16_Callback/152_CB_Parameter.js        # → "Welcome, Dev" then "Let's start testing!"
+node chapter_16_Callback/153_CB_Return.js           # → 15, then step1..4 then "Done!"
+```
+
+---
+
+### 147 — Sync vs Async: why order surprises you
+
+**Concept:** A synchronous callback runs **immediately** and finishes before the next line. An asynchronous callback (like `setTimeout`'s) is handed to the event loop and runs **later**, after all the synchronous code has finished — even when the delay is `0`.
+
+**Why:** This single idea explains every "why did my assertion run before the page loaded?" bug. Tests are full of async work (navigation, network, animations); knowing what defers and what doesn't is the difference between a stable suite and flake.
+
+**Q&A — why use this?**
+- **Q: Does a bigger `setTimeout` delay change the order?** A: No — even `setTimeout(fn, 0)` runs *after* the synchronous lines. The delay is a minimum wait, not a priority.
+- **Q: What actually defers the callback?** A: The event loop. Async callbacks wait in a queue until the call stack is empty, then run one at a time.
+- **Q: How does this connect to Playwright?** A: `await page.click()` is the modern fix — it pauses until the async work resolves, so your next line truly runs *after* it. Callbacks were the old way to express the same "do this when done".
+
+```mermaid
+sequenceDiagram
+    participant S as Call Stack (sync)
+    participant Q as Callback Queue (async)
+    S->>S: console.log("Test 1: started")
+    S->>Q: setTimeout(cb, 2000) — park cb
+    S->>S: console.log("Test 3: next test")
+    Note over S: stack empties
+    Q-->>S: 2s later → run cb
+    S->>S: console.log("Test 2: API response")
+```
+
+```js
+console.log("Test 1: started");
+
+setTimeout(function () {
+    console.log("Test 2: API response received");
+}, 2000);
+
+console.log("Test 3: moving to next test");
+
+// Output order:
+// Test 1: started
+// Test 3: moving to next test
+// Test 2: API response received   ← async, runs last
+```
+
+| Callback kind | Runs | Example | Blocks next line? |
+|---------------|------|---------|-------------------|
+| Synchronous | now, in order | `forEach`, `map` | ✅ yes |
+| Asynchronous | later, via event loop | `setTimeout`, network | ❌ no |
+
+---
+
+## 📖 What's in Chapter 17 — Promises (Available Now)
+
+### Files
+
+| File | Topic | What you'll learn |
+|------|-------|-------------------|
+| `154_Promise.js` | Creating a Promise | `new Promise((resolve, reject) => {})` — the executor runs now; logging the promise shows its state |
+| `155_Promise_REAL_API.js` | `.then()` on resolve | `.then()` fires **only** when the promise resolves — read `response.status` |
+| `156_Promise_REAL_API_PART2.js` | `.catch()` on reject | `.catch()` fires **only** on reject; `.then()` is skipped entirely |
+| `157_Finally.js` | `.finally()` always runs | Cleanup that runs regardless of resolve or reject |
+| `158_Call_Py_Problem.js` | Promise chaining | Return a promise from `.then()` to flatten the callback pyramid into a flat chain |
+| `159_Promise_ALL.js` | `Promise.allSettled` | Run checks in parallel, get **every** result (status + value/reason), never stop at first fail |
+| `160_Promise_IQ.js` | IQ traps | Chaining order, `throw` inside `.then()` jumps to `.catch()`, `all` vs `allSettled` |
+
+### Concept
+
+A **Promise** is an object representing a value that isn't ready yet — it's in one of three states: **pending**, **fulfilled** (`resolve`), or **rejected** (`reject`). You attach `.then()` / `.catch()` / `.finally()` handlers that run when it settles.
+
+### Why
+
+Promises fix callback hell — instead of nesting callbacks into a rightward "pyramid of doom" (Ch 16), you chain flat `.then()` steps. They're the foundation under `async/await` and every Playwright `await page.*` call.
+
+**Q&A — why use this?**
+- **Q: When does `.then()` vs `.catch()` run?** A: `.then()` runs only when the promise **resolves**; `.catch()` runs only when it **rejects**. `.finally()` runs either way.
+- **Q: How does chaining beat callback hell?** A: Returning a promise from inside `.then()` lets the next `.then()` wait for it — the steps stay flat and left-aligned instead of nesting deeper each time.
+- **Q: `Promise.all` or `Promise.allSettled`?** A: `all` rejects the moment **any** promise fails (fail-fast). `allSettled` waits for **all** and reports each one's status — what you want for a test report that shouldn't stop at the first failure.
+
+### Key Concepts
+
+```mermaid
+mindmap
+  root((Chapter 17 — Promises))
+    States
+      pending
+      fulfilled resolve
+      rejected reject
+    Handlers
+      then on resolve
+      catch on reject
+      finally always
+    Chaining
+      return promise in then
+      flat steps not nested
+      kills callback hell
+    Combinators
+      all fail-fast
+      allSettled every result
+    IQ traps
+      throw in then jumps to catch
+      then skipped on reject
+      all stops at first fail
+    Next
+      async / await
+```
+
+### Run them
+
+```bash
+node chapter_17_Promise/154_Promise.js                 # → Promise { 'Pizza is delivered...' }
+node chapter_17_Promise/155_Promise_REAL_API.js         # → 200
+node chapter_17_Promise/156_Promise_REAL_API_PART2.js   # → "500 Error" (catch runs, then skipped)
+node chapter_17_Promise/157_Finally.js                  # → { status: 'done' } then always-runs line
+node chapter_17_Promise/158_Call_Py_Problem.js          # → Step 1..4 flat chain then "Done execution!"
+node chapter_17_Promise/159_Promise_ALL.js              # → Test 1 fulfilled, Test 2 rejected, Test 3 fulfilled
+node chapter_17_Promise/160_Promise_IQ.js               # → allSettled report objects
+```
+
+---
+
+### 158 — Promise chaining: flatten the pyramid
+
+**Concept:** When each async step returns a promise, you `return` it from inside `.then()` so the **next** `.then()` waits for it. The four-level login pyramid from Ch 16 becomes a flat, top-to-bottom chain.
+
+**Why:** Callback hell drifts right with every step and is hard to read or error-handle. A promise chain stays left-aligned and gets **one** `.catch()` at the end for every step, plus **one** `.finally()` for cleanup.
+
+**Q&A — why use this?**
+- **Q: Why `return goToLogin()` instead of just calling it?** A: Returning the promise makes the next `.then()` wait for it to resolve. Without `return`, the chain doesn't wait and order breaks.
+- **Q: How many `.catch()` blocks do I need?** A: One at the end. Any reject (or `throw`) anywhere in the chain skips straight to it — no per-step error handling.
+- **Q: Does `.finally()` see the result?** A: No — `.finally()` takes no argument; it runs for cleanup (close browser, log "done") whether the chain resolved or rejected.
+
+```mermaid
+flowchart TD
+    A[openBrowser&#41;] --> B[then: goToLogin&#41;]
+    B --> C[then: enterCredentials&#41;]
+    C --> D[then: clickLogin&#41;]
+    D --> E[catch: any error]
+    E --> F[finally: Done execution]
+```
+
+```js
+openBrowser()
+    .then(function (msg) {
+        console.log("Step 1", msg);
+        return goToLogin();        // return → next .then waits
+    })
+    .then(function (msg) {
+        console.log("Step 2 :", msg);
+        return enterCredentials();
+    })
+    .then(function (msg) {
+        console.log("Step 3 :", msg);
+        return clickLogin();
+    })
+    .then(function (msg) {
+        console.log("Step 4 :", msg);
+    })
+    .catch(function (error) {        // one catch for the whole chain
+        console.log("Error:", error);
+    })
+    .finally(function () {           // always runs — cleanup
+        console.log("Done execution!");
+    });
+```
+
+| Approach | Shape | Error handling |
+|----------|-------|----------------|
+| Callbacks (Ch 16) | nested pyramid, drifts right | one `catch` per level |
+| Promise chain | flat `.then()` steps | one `.catch()` for all |
+
+---
+
+## 📖 What's in Chapter 18 — Async / Await (Available Now)
+
+### Files
+
+| File | Topic | What you'll learn |
+|------|-------|-------------------|
+| `161_Async.js` | `async` + `try/catch/finally` | `await` a rejected promise; `catch` handles the error, `finally` always cleans up |
+| `162_Aysnc_P2.js` | `await` unwraps a promise | `await getToken()` gives the value, not the promise — the `await page.goto()` pattern |
+| `163_PyODom.js` | Flat E2E with `await` | The Ch 17 login chain rewritten as plain top-to-bottom `await` steps |
+| `164_Async_Ex.js` | Playwright test shape | `test('...', async ({ page }) => {})` + `await expect(page).toHaveTitle()` |
+| `165_AA_Seq.js` | Sequential | Three awaits in a row — each waits for the last (~6s total when each is 2s) |
+| `165_AA_Parallel.js` | Parallel | `await Promise.allSettled([...])` fires all at once (~2s total) |
+| `166_IQ.js` | IQ traps | `await` runs lines in order; an `async` function always returns a promise |
+| `167_ACLogin.js` | Real PW test | `test.step`, `loginAs`, `await expect(...).toBeHidden()` |
+
+### Concept
+
+`async`/`await` is **syntax sugar over Promises** — mark a function `async`, then `await` any promise inside it to pause until it settles and get the value directly. Async code finally reads top-to-bottom like sync code.
+
+### Why
+
+Promise chains (`.then().then()`) still nest and are awkward to debug. `await` flattens them into ordinary lines with normal `try/catch` — exactly how every modern Playwright test is written (`await page.goto()`, `await expect()`).
+
+**Q&A — why use this?**
+- **Q: What does `await` actually do?** A: It pauses the `async` function until the promise settles, then returns the resolved value (or throws the rejection). The rest of your program keeps running.
+- **Q: How do I handle errors?** A: Plain `try/catch/finally` around the `await` — no `.catch()` handler needed. The `finally` block always runs.
+- **Q: Sequential or parallel?** A: Use sequential `await`s only when a step **depends** on the previous result. If they're independent, fire them together with `await Promise.all/allSettled([...])` — far faster.
+
+### Key Concepts
+
+```mermaid
+mindmap
+  root((Chapter 18 — Async / Await))
+    Basics
+      async marks the function
+      await pauses for a promise
+      returns the value not the promise
+    Errors
+      try / catch / finally
+      catch on reject
+      finally always
+    Sugar over promises
+      flat lines not then-chains
+      reads like sync code
+    Sequential
+      await one then next
+      step depends on previous
+      slower sum of waits
+    Parallel
+      await Promise.allSettled
+      independent steps together
+      faster max of waits
+    Playwright
+      async page fixture
+      await page.goto
+      await expect
+```
+
+### Run them
+
+```bash
+node chapter_18_Async_Await/161_Async.js          # → Error 503 reject, then "Clean up!!"
+node chapter_18_Async_Await/162_Aysnc_P2.js       # → abc123
+node chapter_18_Async_Await/163_PyODom.js         # → Step 1..4 as flat awaits
+node chapter_18_Async_Await/165_AA_Seq.js         # → Login/Dashboard/Report, Time ~6000ms
+node chapter_18_Async_Await/165_AA_Parallel.js    # → all three settled, ~2000ms total
+node chapter_18_Async_Await/166_IQ.js             # → opened, clicked, verified — in order
+```
+
+---
+
+### 165 — Sequential vs Parallel awaits
+
+**Concept:** Each `await` pauses until its promise resolves. Put them on separate lines and they run **one after another** (sequential). Hand them all to `Promise.all`/`allSettled` and `await` once, and they run **at the same time** (parallel).
+
+**Why:** Sequential is correct when step 2 needs step 1's result. But awaiting independent calls one-by-one wastes time — three 2-second calls take 6s sequentially vs ~2s in parallel. Picking right is the difference between a slow suite and a fast one.
+
+**Q&A — why use this?**
+- **Q: When MUST I go sequential?** A: When a later step uses an earlier step's value — login → use the token → call the API. Order matters, so you wait.
+- **Q: When should I go parallel?** A: When the calls are independent (check auth, check DB, check cache). Fire them together and await all results at once.
+- **Q: `Promise.all` or `allSettled` for parallel?** A: `all` rejects on the first failure; `allSettled` always returns every result with its status — better for a test report.
+
+```mermaid
+flowchart LR
+    subgraph Seq["Sequential ~6s"]
+        S1[await Login 2s] --> S2[await Dashboard 2s] --> S3[await Report 2s]
+    end
+    subgraph Par["Parallel ~2s"]
+        P0[await Promise.allSettled] --> P1[Auth 2s]
+        P0 --> P2[Account 2s]
+        P0 --> P3[Support 2s]
+    end
+```
+
+```js
+// Sequential — each waits for the previous (~6s)
+let r1 = await apiCall("Login");
+let r2 = await apiCall("Dashboard");
+let r3 = await apiCall("Report");
+
+// Parallel — all fire at once, await together (~2s)
+let [a, b, c] = await Promise.allSettled([
+    apiCall("Auth Service"),
+    apiCall("User Account Creation"),
+    apiCall("Support Page API"),
+]);
+```
+
+| Pattern | When | Speed (3 × 2s calls) |
+|---------|------|----------------------|
+| Sequential `await`s | step depends on previous | ~6s (sum) |
+| Parallel `Promise.allSettled` | independent steps | ~2s (max) |
+
+---
+
+## 📖 What's in Chapter 19 — Playwright Basics (Available Now)
+
+The first **real Playwright project** — its own `package.json`, a `playwright.config.ts`, and TypeScript tests under `tests/`. This is where every JS/async concept from Ch 1–18 starts paying off.
+
+### Files
+
+| File | Topic | What you'll learn |
+|------|-------|-------------------|
+| `tests/example.spec.ts` | First test | `test()`, the built-in `page` fixture, `page.goto`, `expect(page).toHaveTitle` |
+| `tests/codegen-tta-cart.spec.ts` | Codegen recording | A login flow recorded by `codegen` — `locator`, `fill`, `click`, `toBeVisible`, `toContainText`, `toMatchAriaSnapshot` |
+| `playwright.config.ts` | Project config | `defineConfig`, `testDir`, `fullyParallel`, `retries`, `reporter: 'html'`, `headless: false`, `trace` |
+
+### Concept
+
+**Concept:** Playwright drives a real browser from a Node test file. Each test receives a `page` fixture (a fresh browser tab), you `await` actions on it (`goto`, `click`, `fill`), and assert with `await expect(...)`. `codegen` watches you click through a site and writes the test for you.
+
+**Why:** It removes the boilerplate of launching browsers and managing tabs — the `page` fixture is handed to you, ready to use. `codegen` gets a working draft in seconds so you tune locators instead of writing from scratch.
+
+**Q&A — why use this?**
+- **Q: Where does `page` come from?** A: It's a built-in Playwright fixture, auto-injected into the test callback — `async ({ page }) => {}`. A clean isolated browser context per test, no manual `browser.newPage()`.
+- **Q: Why is everything `await`-ed?** A: Browser actions are async (Ch 18). `goto`, `click`, `fill`, and `expect()` all return promises — skip an `await` and you assert before the page is ready, causing flaky failures.
+- **Q: What's `toMatchAriaSnapshot`?** A: An accessibility-tree assertion `codegen` emits — it captures the element's ARIA role/name (e.g. `- alert: "..."`) so the test verifies the page is accessible, not just visually correct.
+
+```mermaid
+flowchart LR
+    A[npx playwright test] --> B[Read playwright.config.ts]
+    B --> C[Launch chromium<br/>headless:false]
+    C --> D[Inject page fixture]
+    D --> E["page.goto&#40;ttacart&#41;"]
+    E --> F["page.locator&#40;...&#41;.fill / click"]
+    F --> G["await expect&#40;...&#41;"]
+    G --> H{Pass?}
+    H -->|Yes| I[✅ html report]
+    H -->|No, retry| J[Trace on-first-retry 🔍]
+    style I fill:#e8f5e9,stroke:#2e7d32
+    style J fill:#fff3e0,stroke:#e65100
+```
+
+```ts
+// tests/example.spec.ts — your first Playwright test
+import { test, expect } from '@playwright/test'
+
+// `page` is a built-in fixture — a fresh browser tab, handed to you.
+test("Verify that the title will be TTA Cart", async ({ page }) => {
+  await page.goto("https://app.thetestingacademy.com/playwright/ttacart/");
+  await expect(page).toHaveTitle("TTACart - Login");
+});
+
+// tests/codegen-tta-cart.spec.ts — recorded with `npx playwright codegen`
+test('login shows error for bad credentials', async ({ page }) => {
+  await page.goto('https://app.thetestingacademy.com/playwright/ttacart/');
+  await page.locator('[data-test="username"]').fill('abc');
+  await page.locator('[data-test="password"]').fill('abcbcbc');
+  await page.locator('[data-test="login-button"]').click();
+  await expect(page.locator('[data-test="error"]')).toBeVisible();
+  await expect(page.locator('[data-test="error"]'))
+    .toContainText('Epic sadface: Username and password do not match any user in this service');
+});
+```
+
+### Run them
+
+```bash
+cd chapter_19_Playwright_Basics
+npm install                  # installs @playwright/test
+npx playwright install       # downloads the browsers
+npx playwright test          # run all tests (headed — headless:false)
+npx playwright show-report   # open the html report
+npx playwright codegen https://app.thetestingacademy.com/playwright/ttacart/  # record your own
+```
+
+---
+
+## 📖 What's in Chapter 20 — Export / Import (Available Now)
+
+The entry point to **ES modules** — how one file shares code and another consumes it. Master `export` / `import` here and every Page Object, fixture, and util file in later chapters reads cleanly.
+
+| File | Topic | What you'll learn |
+|------|-------|-------------------|
+| `utils.js` | Named exports | `export let BASE_URL`, `export function formatTestName` |
+| `testutils.js` | Named exports | A second module exporting its own `BASE_URL` — sets up a name clash |
+| `logger.js` | Default + named | `export default function log` alongside a named `export function log2` |
+| `01_EXPORT_IMPORT/169_Utils.js` | Named imports | `import { BASE_URL as bul_util }` — braces + `as` alias to dodge clashes |
+| `01_EXPORT_IMPORT/170_Logger.js` | Default import | `import log from ...` — no braces, name is yours to pick |
+| `01_EXPORT_IMPORT/ExplainDefault.md` | Reference | Side-by-side default vs non-default export rules |
+
+### Concept
+
+**Concept:** A module exposes code two ways — **named exports** (`export`, many per file, imported by exact name in `{ }`) and a single **default export** (`export default`, imported with no braces under any name you choose).
+
+**Why:** Without modules everything lives in one global soup. `export`/`import` give explicit boundaries — you import only what you need, and the compiler catches typos in names.
+
+**Q&A — why use this?**
+- **Q: Braces or no braces?** A: Named imports need `{ }` and must match the exported name. The default import takes no braces and you name it whatever you want.
+- **Q: Two files both export `BASE_URL` — collision?** A: Alias one with `as`: `import { BASE_URL as bul_util } from "../utils.js"`. Both bindings coexist.
+- **Q: How many defaults per file?** A: Exactly one. You can mix it with as many named exports as you like (see `logger.js`).
+
+```mermaid
+flowchart TD
+    Q{What kind of export?} -->|many helpers| N["export function foo"]
+    Q -->|the module's main thing| D["export default log"]
+    N --> NI["import &#123; foo, bar as baz &#125; from '...'"]
+    D --> DI["import anyName from '...'"]
+    NI --> R[Used in consumer file]
+    DI --> R
+    style D fill:#e8f5e9,stroke:#2e7d32
+    style N fill:#e3f2fd,stroke:#1565c0
+```
+
+```js
+// utils.js — named exports (many allowed)
+export let BASE_URL = "https://api.staging.com";
+export function formatTestName(name) {
+  return "TC_" + name.toUpperCase();
+}
+
+// logger.js — one default + one named
+export default function log(message) {
+  console.log("[LOG] - default " + message);
+}
+export function log2(message) {
+  console.log("[LOGS] " + message);
+}
+
+// 169_Utils.js — named imports, `as` alias to avoid BASE_URL clash
+import { BASE_URL as bul_util, formatTestName } from "../utils.js";
+import { BASE_URL as bul_testtul } from "../testutils.js";
+console.log(formatTestName("login")); // TC_LOGIN
+
+// 170_Logger.js — default import, no braces, name is yours
+import log from "../logger.js";
+log("starting the test cases"); // [LOG] - default starting the test cases
+```
+
+### Run them
+
+```bash
+cd chapter_20_Export_Import
+node 01_EXPORT_IMPORT/169_Utils.js     # named imports + alias
+node 01_EXPORT_IMPORT/170_Logger.js    # default import
+```
+
+> 📄 Full breakdown: [`chapter_20_Export_Import/01_EXPORT_IMPORT/ExplainDefault.md`](chapter_20_Export_Import/01_EXPORT_IMPORT/ExplainDefault.md)
+
+---
+
+## 📖 What's in Chapter 21 — Classes & Objects (Available Now)
+
+The heart of OOP — a **class** is a blueprint, an **object** is one instance built with `new`. Constructors seed `this`, `#private` hides data, `static` lives on the class.
+
+| File | Topic | What you'll learn |
+|------|-------|-------------------|
+| `171_Class_Object.js` | Class shape | Attributes (fields) + behaviour (methods) — the blueprint |
+| `172_Class_Object2.js` | `new` + constructor | Constructor fires on `new`; object reference vs the object |
+| `173_Car.js` | Parameterised constructor | Pass values into `new Car("Model S")`, store on `this.name` |
+| `174_REAL_Browser.js` | Method vs function | A method is a function that lives inside a class |
+| `175_IQ.js` | Per-object state | Each `new` makes its own `this` — independent fields |
+| `176_Private_Public.js` | `#private` vs public | `#apiKey` is unreachable outside; expose via a method |
+| `177_Statis.js` / `178_Statis.js` | `static` members | Class-level fields/methods — call on the class, not an instance |
+
+**Concept:** A **class** is a blueprint; an **object** is one instance built with `new`. The `constructor` runs once at creation to seed `this`. `#name` fields are private (hidden outside the class); `static` members belong to the class itself, shared across all instances.
+
+**Why:** Classes bundle data + the behaviour acting on it into one named unit — exactly what a Page Object is (locators = fields, actions = methods). Private fields protect secrets (API keys); static members hold shared config.
+
+**Q&A — why use this?**
+- **Q: Constructor vs a normal method?** A: The `constructor` auto-runs once on `new` to initialise `this`. Normal methods run only when you call them.
+- **Q: What does `#` do?** A: Marks a truly private field — `cred.#apiKey` outside the class throws; `cred.apiKey` is `undefined`. Access it through a method like `getAuthHeader()`.
+- **Q: When `static`?** A: When the value belongs to the class, not any one object — `Student.mentor_name`, a shared counter, a factory helper. Called as `Student.display()`, never on an instance.
+
+```mermaid
+classDiagram
+    class Credentials {
+        +user
+        -#apiKey
+        +constructor(user, key)
+        +getAuthHeader()
+    }
+    class Student {
+        +name_student
+        +age
+        +static mentor_name
+        +static display()
+    }
+    note for Credentials "#apiKey hidden\nreach via method"
+    note for Student "static = class-level\nStudent.display()"
+```
+
+```js
+// 173_Car.js — class blueprint + parameterised constructor + this
+class Car {
+  constructor(name) {
+    this.name = name;        // runs once on `new`
+  }
+  drive() {                  // method = function inside a class
+    console.log("i am driving", this.name);
+  }
+}
+const tesla = new Car("Model S");
+tesla.drive();               // i am driving Model S
+
+// 176_Private_Public.js — #private vs public
+class Credentials {
+  #apiKey;                   // private — hidden outside
+  constructor(user, key) {
+    this.user = user;        // public
+    this.#apiKey = key;
+  }
+  getAuthHeader() { return "Bearer " + this.#apiKey; }
+}
+const cred = new Credentials("admin", "secret_1234");
+console.log(cred.getAuthHeader());  // Bearer secret_1234
+
+// 177_Statis.js — static = class-level, not per-object
+class Student {
+  static mentor_name = "Pramod Dutta";
+  static display() { console.log("class-level method"); }
+}
+console.log(Student.mentor_name);   // call on the class, not an instance
+```
+
+### Run them
+
+```bash
+node 173_Car.js          # blueprint + constructor
+node 176_Private_Public.js  # #private fields
+node 177_Statis.js       # static members
+```
+
+---
+
+## 📖 What's in Chapter 22 — Encapsulation (Available Now)
+
+Hide internal data behind `#private` fields, expose it only through methods. The object guards its own state.
+
+| File | Topic | What you'll learn |
+|------|-------|-------------------|
+| `179_Ecap.js` | Hide state | `#balance` is private; `deposit()` / `getBalance()` are the only doors |
+| `180_REAK_EXAMPLE.js` | Getter / setter | Read `#child1` via `getChild1()`, change via `setChild1()` |
+| `181_Ecap_Car.js` | Controlled access | `getEngine` / `setEngine` wrap a private `#engine` |
+| `182_ECap_Bank.js` | Guarded setter | `setBalance` mutates only when `isCashier` — validation on write |
+
+**Concept:** Encapsulation = hide internal data behind `#private` fields and expose it only through methods (getters/setters). The object guards its own state.
+
+**Why:** Outside code can't corrupt internals. A setter can validate (`if (amount > 0)`, `if (isCashier)`) before allowing a change — impossible if the field were public.
+
+**Q&A — why use this?**
+- **Q: Difference from just using `#`?** A: `#` is the mechanism; encapsulation is the pattern — private field + public method gate. The method is where rules live.
+- **Q: Why a setter instead of a public field?** A: A setter can reject bad input. `182_ECap_Bank.js` blocks non-cashiers from changing the balance.
+- **Q: Where in testing?** A: A Page Object hides its locators (`#usernameField`) and exposes `login()` — callers can't fiddle with selectors.
+
+```mermaid
+flowchart LR
+    Caller -->|deposit&#40;100&#41;| M[public method]
+    Caller -.->|"account.#balance ❌"| X[blocked]
+    M -->|validates then writes| P["#balance (private)"]
+    M -->|getBalance&#40;&#41;| Caller
+    style P fill:#ffebee,stroke:#c62828
+    style X fill:#ffebee,stroke:#c62828
+```
+
+```js
+// 182_ECap_Bank.js — setter guards the write
+class ICICI {
+  #balance;
+  constructor(name, balance) { this.name = name; this.#balance = balance; }
+  getBalance() { return this.#balance; }
+  setBalance(balance, isCashier) {
+    if (isCashier) this.#balance = balance;
+    else console.log("Not allowed");      // validation on write
+  }
+}
+let acc = new ICICI("Pramod", 1000);
+acc.setBalance(10000000, false);  // Not allowed
+acc.setBalance(300000, true);     // ok — cashier
+```
+
+---
+
+## 📖 What's in Chapter 23 — Inheritance (Available Now)
+
+A child class `extends` a parent — reusing, adding, and overriding. `super()` calls the parent constructor; `super.method()` the parent's method.
+
+| File | Topic | What you'll learn |
+|------|-------|-------------------|
+| `183_Single_Inheritance.js` | `extends` | `LoginPage extends BasePage` — child reuses `open()`/`close()` |
+| `184_SI_Example.js` | `super()` | `super(name)` runs the parent constructor first |
+| `185_Single_Inheritance_Con.js` | Override | Child `setup()` replaces parent's |
+| `186_IQ.js` | `super.method()` | Call the parent's version, then add to it |
+| `187_IQ2.js` | Polymorphic loop | One array of subclasses, each `execute()` differs |
+| `188_REAL_PageObject_Model.js` | Real POM | `BasePage` → `Login`/`Dashboard`/`Cart`, each `verify()` |
+| `189_Multiple_Inheritance.js` | Not allowed | `extends A, B` is a `SyntaxError` in JS |
+| `190_Multiple_Level_Inheritance.js` | Multi-level | `BasePage` → `AuthPage` → `AdminPage` |
+| `191_Hierarchial_Inheritance.js` | Hierarchical | One parent, many children |
+
+**Concept:** Inheritance lets a child class `extends` a parent — reusing its fields/methods, adding its own, and optionally overriding. `super(...)` calls the parent constructor; `super.method()` calls the parent's method.
+
+**Why:** Shared behaviour lives once in a base class. Every Page Object inherits `open()`/`close()` from `BasePage` — write it once, reuse everywhere.
+
+**Q&A — why use this?**
+- **Q: `super()` vs `super.fn()`?** A: `super()` (in a constructor) runs the parent constructor. `super.fn()` calls the parent's method `fn` — used when you override but still want the parent's work.
+- **Q: Multiple inheritance?** A: JS forbids `extends A, B`. Use multi-level (`A → B → C`) or composition instead.
+- **Q: Override = lose the parent?** A: Only if you don't call `super.method()`. `186_IQ.js` calls `super.setup()` then adds extra steps.
+
+```mermaid
+classDiagram
+    BasePage <|-- LoginPage
+    BasePage <|-- DashboardPage
+    BasePage <|-- CartPage
+    BasePage : +open()
+    BasePage : +close()
+    LoginPage : +verify()
+    DashboardPage : +verify()
+    CartPage : +verify()
+```
+
+```js
+// 184_SI_Example.js — extends + super()
+class Animal {
+  constructor(name) { this.name = name; }
+  eat() { console.log(this.name + " is eating"); }
+}
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name);          // parent constructor first
+    this.breed = breed;
+  }
+  bark() { console.log(this.name + " is barking!"); }
+}
+const dog = new Dog("Rex", "Labrador");
+dog.eat();   // inherited
+dog.bark();  // own method
+
+// 186_IQ.js — override but keep parent via super.method()
+class UITest extends BaseTest {
+  setup() {
+    super.setup();                       // run parent's setup
+    console.log("UI: maximize window");  // then add to it
+  }
+}
+```
+
+---
+
+## 📖 What's in Chapter 24 — Polymorphism (Available Now)
+
+Same method name, different behaviour per class. Calling code stays identical.
+
+| File | Topic | What you'll learn |
+|------|-------|-------------------|
+| `192_Method_Overriding.js` | Method overriding | Same `setup()` name, subclass supplies its own body |
+
+**Concept:** Polymorphism = "many forms". The same method name (`setup()`, `execute()`, `verify()`) behaves differently depending on the object's actual class. Calling code stays identical.
+
+**Why:** Loop over a mixed list of objects and call one method — each does the right thing. No `if (type === ...)` ladders.
+
+**Q&A — why use this?**
+- **Q: Overriding vs overloading?** A: JS does **overriding** (child redefines a parent method). It has no true overloading (same name, different signatures) — last definition wins.
+- **Q: How is it "many forms"?** A: `test.execute()` runs unit, API, or E2E logic depending on which subclass `test` is — see `187_IQ2.js`.
+- **Q: Where in frameworks?** A: A runner loops `pages.forEach(p => p.verify())`; each Page Object's `verify()` runs its own checks (`188_REAL_PageObject_Model.js`).
+
+```js
+// 192_Method_Overriding.js — same name, different body
+class BaseTest {
+  setup() { console.log("Base: open browser"); }
+}
+class APIPage extends BaseTest {
+  setup() { console.log("APITest: open browser"); }  // overrides
+}
+new APIPage().setup();   // APITest: open browser
+```
+
+---
+
+## 📖 What's in Chapter 25 — OOP Interview Questions (Available Now)
+
+Four warm-up drills: `EX1` Bug class (fields + `display()`), `EX2` constructor default values, `EX3` `this` per object, `EX4` method chaining (`return this`).
+
+```js
+// EX4.js — return this enables chaining
+class Counter {
+  constructor() { this.count = 0; }
+  increment() { this.count++; return this; }   // hand back the object
+  display() { console.log("Count:", this.count); return this; }
+}
+new Counter().increment().increment().increment().display();  // Count: 3
+```
+
+### Run them
+
+```bash
+node chapter_22_Encapsulation/182_ECap_Bank.js          # guarded setter
+node chapter_23_Inheritance/186_IQ.js                   # super.method()
+node chapter_24_Polymorphism/192_Method_Overriding.js   # overriding
+node chapter_25_OOP_Interview_Questions/EX4.js          # method chaining
+```
+
+---
+
+## 📖 What's in Chapter 26 — TypeScript (Available Now)
+
+JavaScript with **types**. Annotate variables, parameters, and return values so the compiler catches mistakes *before* the test runs — no more `undefined is not a function` at runtime.
+
+| File | Topic | What you'll learn |
+|------|-------|-------------------|
+| `193_TS.js` | Plain JS (the "before") | Untyped `let` + `function add(a, b)` — nothing stops `add("1", 2)` |
+| `194_TS_HelloWorld.ts` | First types | `let x: string`, typed params `(a: number, b: number): number` |
+| `195_TS_Part1.ts` | `void` | A function that returns nothing |
+| `196_TS_Part2.ts` | Primitives + arrays | `string`/`number`/`boolean`/`null`, `number[]` vs `Array<string>`, `any` vs `unknown` |
+| `197_TS_Part2.ts` | Narrowing + shapes | `typeof` narrowing on `unknown`, arrow + inline object annotations |
+| `198_Part3.ts` | `void` vs `never` | `never` = throws or loops forever, no return |
+| `199_IQ.ts` / `200_IQ.ts` | Typed helpers | `string`/`number`/`boolean`/`void` fns, typed `number[]` filter |
+
+**Concept:** TypeScript = JavaScript + a type layer. You write `: type` annotations; `tsc` checks them and compiles to plain JS. Types vanish at runtime — they're a compile-time safety net.
+
+**Why:** Catch bugs at author time. A wrong argument type, a typo'd property, a missing return — all flagged in the editor instead of failing mid-test in CI.
+
+**Q&A — why use this?**
+- **Q: `any` vs `unknown`?** A: `any` switches off checking — anything goes. `unknown` is the safe version: you must narrow (`typeof x === "string"`) before using it. Prefer `unknown`.
+- **Q: `void` vs `never`?** A: `void` returns (just no useful value). `never` *never* returns — it throws or loops forever, so code after the call is unreachable.
+- **Q: How do I run a `.ts` file?** A: Node ≥ 22.18 runs it directly: `node file.ts`. Or `npx tsx file.ts`. Or compile with `npx tsc` then `node file.js`.
+
+```ts
+// 196_TS_Part2.ts — primitives, arrays, any vs unknown
+let age: number = 30;
+let numbers: number[] = [1, 2, 3];
+let names: Array<string> = ["John", "Jane"];
+let anything: any = "hello";       // unchecked — avoid
+let value: unknown = "hello";      // safe — must narrow before use
+
+// 198_Part3.ts — void vs never
+function sayHello(msg: string): void { console.log(msg); }       // returns nothing
+function throwError(message: string): never { throw new Error(message); } // never returns
+```
+
+### Run them
+
+```bash
+cd chapter_26_Typescript
+node 198_Part3.ts            # Node ≥ 22.18 runs .ts directly
+node 200_IQ.ts               # or: npx tsx 200_IQ.ts
+```
+
+---
+
+## 📖 What's in Chapter 27 — TypeScript Interfaces (Available Now)
+
+An **interface** names the shape of an object — which properties it must have and their types. The compiler then rejects any object that doesn't match.
+
+| File | Topic | What you'll learn |
+|------|-------|-------------------|
+| `201_IF.ts` | Interface basics | `interface TestCase { id: number; ... }` — objects must match exactly |
+| `202_IF_Part2.ts` | Optional `?` | `headers?: object` — property may be absent |
+| `203_IF_READONLY.ts` | `readonly` + optional | `readonly statusCode` can't be reassigned; `?` fields stay optional |
+| `204_IF_READOnly.ts` | readonly fields + arrays | `readonly x` and `readonly number[]` — frozen values |
+
+**Concept:** An interface is a contract for an object's structure. `?` marks a property optional; `readonly` blocks reassignment after creation.
+
+**Why:** API responses, test cases, configs all have a fixed shape. Declare it once as an interface and every object is checked against it — typos and missing fields fail at compile time.
+
+**Q&A — why use this?**
+- **Q: What does `?` do?** A: Makes a property optional — `response2` can include `headers`/`responseTime`, `response1` can omit them. Both satisfy the interface.
+- **Q: What does `readonly` protect?** A: Reassignment. `response.statusCode = 404` is a compile error; `response.body = "..."` (non-readonly) is fine.
+- **Q: Interface vs the inline `{ name: string }` from Ch 26?** A: Same idea — an interface is the **named, reusable** version you can apply to many objects.
+
+```ts
+// 203_IF_READONLY.ts — readonly + optional combined
+interface APIReponse {
+  readonly statusCode: number;   // can't reassign
+  body: string;
+  headers?: object;              // optional
+  responTime?: number;
+}
+let response: APIReponse = { statusCode: 200, body: '{"user": "admin"}' };
+// response.statusCode = 404;    // ❌ compile error — readonly
+response.body = "updated";        // ✅ allowed
+```
+
+### Run them
+
+```bash
+cd chapter_27_TypeScript_Interface
+node 201_IF.ts               # Node ≥ 22.18 runs .ts directly
+node 203_IF_READONLY.ts      # or: npx tsx 203_IF_READONLY.ts
+```
+
+---
+
 ## 🔭 What's Coming Next
 
 ```mermaid
 graph TD
-    subgraph next["Next Up — Strings, Objects, 2D Arrays"]
-        N1[Ch 12: Functions ✅] --> N2[Ch 13: Strings]
-        N2 --> N3[Ch 14: Objects]
-        N3 --> N4[Ch 15: 2D Arrays]
+    subgraph next["Next Up — Playwright Basics"]
+        N1[Ch 17: Promises ✅] --> N2[Ch 18: Async / Await ✅]
+        N2 --> N3[Ch 19: Playwright Basics ✅]
+        N3 --> N4[Ch 20: Export / Import ✅]
+        N4 --> N5[Ch 21-24: OOP 4 Pillars ✅]
+        N5 --> N6[Ch 25: OOP Interview Qs ✅]
+        N6 --> N7[Ch 26: TypeScript ✅]
+        N7 --> N8[Ch 27: TS Interfaces ✅]
+        N8 --> N9[Ch 28: Locators & POM]
     end
 
     style next fill:#fff3e0,stroke:#e65100
@@ -2955,6 +4653,21 @@ graph TD
 - ✅ Chapter 11 — **Arrays (Part 2)**: sort (lexicographic trap), slice vs splice, concat/spread/join, `isArray`/`every`/`some` (files `92`–`95`)
 - ✅ Chapter 12 — **Functions (Part 1)**: define + call, four function types, parameter vs argument, template-literal returns, function expression, arrow functions (files `96`–`103`)
 - ✅ Chapter 12 — **Functions (Part 2)**: all-three forms side-by-side, IIFE, default/rest/spread params, scope, closures, higher-order functions, pure functions (files `104`–`117`)
+- ✅ Chapter 13 — **Strings**: quotes/template literals, properties & indexing, search/check, slice vs substring, transform (case/trim/replace/split), conversion + a full method cheat sheet (files `118`–`123`)
+- ✅ Chapter 14 — **Objects**: literals & access, primitive vs reference, destructuring, spread copy, `let` vs `const` for objects, get/set + `this`, `keys`/`values`/`entries` (files `124`–`137`)
+- ✅ Chapter 15 — **2D Arrays**: grids & shape (rows × cols), nested-loop traversal (`for`/`for...of`/`forEach`), `write` vs `log` table printing, `map`+`reduce` row sums, failed-case filtering, star-pattern IQ (files `138`–`142`)
+- ✅ Chapter 16 — **Callbacks**: pass-a-function (named/anon/arrow), the `test()` callback shape, sync vs async (`forEach` vs `setTimeout`), event-loop ordering, callback hell / 24-step pyramid of doom, callbacks with parameters & return-driving (files `143`–`153`)
+- ✅ Chapter 17 — **Promises**: `new Promise` (resolve/reject), `.then`/`.catch`/`.finally`, chaining to flatten callback hell, `Promise.all` vs `allSettled`, IQ traps (`throw` in `.then`, settle order) (files `154`–`160`)
+- ✅ Chapter 18 — **Async / Await**: `async`/`await` as sugar over promises, `try/catch/finally` error handling, flat E2E awaits vs `.then()` chains, sequential vs parallel (`Promise.allSettled`), first real Playwright tests (files `161`–`167`)
+- ✅ Chapter 19 — **Playwright Basics**: first real PW project — `playwright.config.ts`, the built-in `page` fixture, `page.goto` + `toHaveTitle`, a `codegen`-recorded login flow (`fill`/`click`/`toBeVisible`/`toContainText`/`toMatchAriaSnapshot`)
+- ✅ Chapter 20 — **Export / Import (ES modules)**: named vs default exports, `as` alias for name clashes, mixing default + named (`chapter_20_Export_Import/` + `ExplainDefault.md`)
+- ✅ Chapter 21 — **Classes & Objects**: `new`/constructor/`this`, method vs function, `#private` fields, `static` class-level members (files `171`–`178`)
+- ✅ Chapter 22 — **Encapsulation**: `#private` + getter/setter gates, validation-on-write guarded setters (files `179`–`182`)
+- ✅ Chapter 23 — **Inheritance**: `extends`, `super()`/`super.method()`, override, multi-level, hierarchical, real Page Object Model (files `183`–`191`)
+- ✅ Chapter 24 — **Polymorphism**: method overriding — same name, different body per class (file `192`)
+- ✅ Chapter 25 — **OOP Interview Questions**: fields + `display()`, constructor default values, `this` per object, method chaining `return this` (`EX1`–`EX4`)
+- ✅ Chapter 26 — **TypeScript**: type annotations, primitives, `number[]`/`Array<string>`, `any` vs `unknown` + narrowing, `void` vs `never`, typed helpers (files `193`–`200`) + root `tsconfig.json`
+- ✅ Chapter 27 — **TypeScript Interfaces**: object-shape contracts, optional `?` properties, `readonly` fields & `readonly` arrays (files `201`–`204`)
 - ✅ **Per-chapter README** — every chapter folder now has its own deep-dive README.md
 
 ---
